@@ -1,11 +1,6 @@
 import React from "react";
-import element1 from '../../assets/images/element/element-48.png'
-import element2 from '../../assets/images/element/element-39.png'
-import element3 from '../../assets/images/element/element-40.png'
-import element4 from '../../assets/images/element/element-7.png'
-import element5 from '../../assets/images/element/element-41.png'
-import element6 from '../../assets/images/element/element-42.png'
-import logo from '/logo-azul.webp'
+import element1 from '../../assets/images/element/element-48.png';
+import logo from '/logo.png';
 
 export default function Footer() {
     return (

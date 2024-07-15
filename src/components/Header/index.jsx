@@ -1,5 +1,5 @@
 import React from "react";
-import logo from '/logo-azul.webp'
+import logo from '/logo.png'
 export default function Header() {
     return (
         <header className="header-section three">

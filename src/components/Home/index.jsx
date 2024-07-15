@@ -6,23 +6,25 @@ import './styles.css'
 export default function Home() {
     return (
         <>
-            <section className="banner-section home-three">
+            <section className="banner-section home-three" style={{ marginBottom: 0 }}>
                 <div className="banner-three-slider">
-                    <div className="swiper-wrapper">
+                    <div className="swiper-wrapper" style={{ height: 800 }}>
                         <div className="swiper-slide">
                             <div className="container custom-container-three">
-                                <div className="home-three-banner">
-                                    <img src={ellipse} className="banner-shape z-5 -m-5" alt="" />
-                                    <div className="row align-items-end mb-30-none">
-                                        <div className="col-xl-5 col-lg-6">
-                                            <div className="z-5" data-aos="fade-right" data-aos-duration="1800">
+                                <div className="home-three-banner" style={{ paddingTop: 70 }}>
+                                    <div className="row align-items-center mb-30-none">
+                                        <div className="col-xl-5 col-lg-5">
+                                            <div data-aos="fade-right" data-aos-duration="1800">
                                                 <p>Somos una distribuidora mayorista de auto-partes dedicada a</p>
-                                                <h1 className="subtitle">Satisfacer las necesidades de nuestros clientes</h1>
+                                                <h1 className="title">Satisfacer las necesidades de nuestros clientes</h1>
                                                 <span></span>
                                             </div>
                                         </div>
-                                        <div className="banner-personalizado">
-                                            <img src={home1} alt="" />
+                                        <div style={{ position: 'relative', width: '50%' }}>
+                                            <img src={ellipse} className="banner-shape ellipse" alt="" />
+                                            <div className="banner-personalizado">
+                                                <img src={home1} alt="" className="imagen-distri" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -40,7 +42,7 @@ export default function Home() {
                                                 <p>We develop software <br /> for you to succeed in a <br /> digital world.</p>
                                             </div>
                                         </div>
-                                        <div className="banner-personalizado">
+                                        <div className="banner-image banner-personalizado">
                                             <img src={home1} alt="" />
                                         </div>
                                     </div>
