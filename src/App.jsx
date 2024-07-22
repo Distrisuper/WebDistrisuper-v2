@@ -1,8 +1,7 @@
-import Layout from './components/Layout'
-import About from './components/About'
-import Products from './components/Products'
-import Home from './components/Home'
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import Layout from './components/Layout';
+import './App.css'
 
 function App() {
   return (
@@ -13,22 +12,6 @@ function App() {
           element={
             <Layout title="Inicio" breadcrum="">
               <Home />
-            </Layout>
-          }
-        />
-        <Route
-          path="/nosotros"
-          element={
-            <Layout title="Sobre nosotros" breadcrum="Nosotros">
-              <About />
-            </Layout>
-          }
-        />
-        <Route
-          path="/productos"
-          element={
-            <Layout title="Nuestros productos" breadcrum="Productos">
-              <Products />
             </Layout>
           }
         />

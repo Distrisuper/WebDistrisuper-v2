@@ -1,130 +1,55 @@
 import React from "react";
-import ellipse from "../../assets/images/home/Ellipse.png"
-import home1 from "/general-pico.jpg"
-import './styles.css'
-
+import pico from "/gralpico.png"
+import mdp from "/mdp.png"
 export default function Home() {
     return (
         <>
-            <section className="banner-section home-three" style={{ marginBottom: 0 }}>
-                <div className="banner-three-slider">
-                    <div className="swiper-wrapper" style={{ height: 800 }}>
-                        <div className="swiper-slide">
-                            <div className="container custom-container-three">
-                                <div className="home-three-banner" style={{ paddingTop: 70 }}>
-                                    <div className="row align-items-center mb-30-none">
-                                        <div className="col-xl-5 col-lg-5">
-                                            <div data-aos="fade-right" data-aos-duration="1800">
-                                                <p>Somos una distribuidora mayorista de auto-partes dedicada a</p>
-                                                <h1 className="title">Satisfacer las necesidades de nuestros clientes</h1>
-                                                <span></span>
-                                            </div>
-                                        </div>
-                                        <div style={{ position: 'relative', width: '50%' }}>
-                                            <img src={ellipse} className="banner-shape ellipse" alt="" />
-                                            <div className="banner-personalizado">
-                                                <img src={home1} alt="" className="imagen-distri" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="swiper-slide">
-                            <div className="container custom-container-three">
-                                <div className="home-three-banner">
-                                    <img src={ellipse} className="banner-shape z-5 -m-5" alt="" />
-                                    <div className="row align-items-end mb-30-none">
-                                        <div className="col-xl-5 col-lg-6">
-                                            <div className="banner-content-two z-5" data-aos="fade-right" data-aos-duration="1800">
-                                                <h1 className="title ">Accelerating Digitality</h1>
-                                                <span></span>
-                                                <p>We develop software <br /> for you to succeed in a <br /> digital world.</p>
-                                            </div>
-                                        </div>
-                                        <div className="banner-image banner-personalizado">
-                                            <img src={home1} alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div className="bg-blue-100 h-screen flex flex-row items-center justify-between p-24">
+                <div className="w-1/2">
+                    <h1 className="text-6xl leading-relaxed">Somos un <strong>mayorista</strong> de <strong>autopartes</strong> orientados a <strong>casas de repuestos automotor, agro e industria</strong></h1>
+                </div>
+                <div>
+                    <div className="h-96 w-96 bg-gray-300"></div>
+                </div>
+            </div>
+            <div className="flex flex-col justify-center items-center p-24">
+                <span className="w-full flex items-center justify-center my-6">
+                    <h2 className="text-6xl leading-relaxed text-center">Nos enfocamos fuertemente en el servicio, calidad y disponibilidad de nuestros productos y en la continua innovación.</h2>
+                </span>
+                <div className="bg-gray-600 w-10/12 rounded-xl flex flex-row p-20 gap-48 justify-center mt-6">
+                    <div className="flex flex-col items-center">
+                        <span className="text-6xl font-extrabold text-white">40+</span>
+                        <span className=" text-white mt-2 text-xl">Años de experiencia</span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <span className="text-6xl font-extrabold text-white">400+</span>
+                        <span className=" text-white mt-2 text-xl">Pedidos entregados cada día</span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <span className="text-6xl font-extrabold text-white">4000+</span>
+                        <span className=" text-white mt-2 text-xl">Localidades alcanzadas</span>
                     </div>
                 </div>
-            </section>
-            <section className="agency-section ptb-120">
-                <div className="container">
-                    <div className="row justify-content-center">
-                        <div className="col-xl-12">
-                            <div className="agency-content text-center">
-                                <div className="agency-logo-text">
-                                    <span>AGENCY</span>
-                                </div>
-                                <h2 className="title">Softim is a digital agency that
-                                    offers a wide scale of
-                                    creative services, including brand development
-                                    online marketing and lots more.</h2>
-                            </div>
-                            <div className="agency-statistics-area">
-                                <div className="row justify-content-center mb-30-none">
-                                    <div
-                                        className="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-30">
-                                        <div className="statistics-item">
-                                            <div className="statistics-content">
-                                                <div className="odo-area">
-                                                    <h3 className="odo-title odometer"
-                                                        data-odometer-final="12">40</h3>
-                                                    <h3 className="title">+</h3>
-                                                </div>
-                                                <p>Años de experiencia</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        className="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-30">
-                                        <div className="statistics-item">
-                                            <div className="statistics-content">
-                                                <div className="odo-area">
-                                                    <h3 className="odo-title odometer"
-                                                        data-odometer-final="256">250</h3>
-                                                    <h3 className="title">+</h3>
-                                                </div>
-                                                <p>Entregas por día</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        className="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-30">
-                                        <div className="statistics-item">
-                                            <div className="statistics-content">
-                                                <div className="odo-area">
-                                                    <h3 className="odo-title odometer"
-                                                        data-odometer-final="65">400</h3>
-                                                    <h3 className="title">+</h3>
-                                                </div>
-                                                <p>Localidades alcanzadas</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        className="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-30">
-                                        <div className="statistics-item">
-                                            <div className="statistics-content">
-                                                <div className="odo-area">
-                                                    <h3 className="odo-title odometer"
-                                                        data-odometer-final="25">100</h3>
-                                                    <h3 className="title">+</h3>
-                                                </div>
-                                                <p>Pedidos autogestionados</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                <div className="flex flex-row gap-20 m-24 items-center">
+                    <img src={pico} />
+                    <div>
+                        <img src={mdp} />
                     </div>
+
                 </div>
-            </section>
+                <h3 className="font-extrabold text-gray-300 text-6xl py-16">NUESTROS PRODUCTOS</h3>
+                <div>
+                    <span></span>
+                    <div className="flex flex-row gap-8">
+                        <div className="h-96 w-96 bg-gray-300 rounded-lg"></div>
+                        <div className="h-96 w-96 bg-gray-300 rounded-lg"></div>
+                        <div className="h-96 w-96 bg-gray-300 rounded-lg"></div>
+                    </div>
+                    <span></span>
+                </div>
+
+            </div>
         </>
     );
 }
