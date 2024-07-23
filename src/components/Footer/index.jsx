@@ -16,22 +16,22 @@ export default function Footer() {
                         <ul className="flex space-x-4 mb-4">
                             <li>
                                 <a href="https://www.facebook.com/distrisuper" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600">
-                                    <FontAwesomeIcon icon={faFacebookF} />
+                                    <FontAwesomeIcon icon={faFacebookF} size="lg" />
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.instagram.com/distrisuperautopartes/" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600">
-                                    <FontAwesomeIcon icon={faInstagram} />
+                                    <FontAwesomeIcon icon={faInstagram} size="lg" />
                                 </a>
                             </li>
                             <li>
                                 <a href="mailto:info.distrisuper@gmail.com" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600">
-                                    <FontAwesomeIcon icon={faEnvelope} />
+                                    <FontAwesomeIcon icon={faEnvelope} size="lg" />
                                 </a>
                             </li>
                             <li>
                                 <a href="https://api.whatsapp.com/send/?phone=5492236208620&text&type=phone_number&app_absent=0" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600">
-                                    <FontAwesomeIcon icon={faPhone} />
+                                    <FontAwesomeIcon icon={faPhone} size="lg" />
                                 </a>
                             </li>
                         </ul>

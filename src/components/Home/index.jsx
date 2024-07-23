@@ -16,23 +16,24 @@ export default function Home() {
                 <span className="w-full flex items-center justify-center my-6">
                     <h2 className="text-5xl 2xl:text-6xl leading-relaxed 2xl:leading-relaxed text-center">Nos enfocamos fuertemente en el servicio, calidad y disponibilidad de nuestros productos y en la continua innovación.</h2>
                 </span>
-                <div className="bg-gray-600 w-10/12 rounded-xl flex flex-row p-20 gap-48 justify-center mt-6">
+                <div className="bg-gray-600 w-10/12 rounded-xl flex flex-row p-20 gap-16 2xl:gap-48 justify-center my-16">
                     <div className="flex flex-col items-center">
                         <span className="text-5xl 2xl:text-6xl font-extrabold text-white">40+</span>
                         <span className=" text-white mt-2 text-xl">Años de experiencia</span>
                     </div>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center ">
                         <span className="text-5xl 2xl:text-6xl font-extrabold text-white">400+</span>
-                        <span className=" text-white mt-2 text-xl">Pedidos entregados cada día</span>
+                        <span className=" text-white mt-2 text-xl text-center">Pedidos entregados <br />cada día</span>
                     </div>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center ">
                         <span className="text-5xl 2xl:text-6xl font-extrabold text-white">4000+</span>
                         <span className=" text-white mt-2 text-xl">Localidades alcanzadas</span>
                     </div>
                 </div>
-
                 <div className="flex flex-row gap-20 m-24 items-center">
-                    <img src={pico} />
+                    <div>
+                        <img src={pico} />
+                    </div>
                     <div>
                         <img src={mdp} />
                     </div>

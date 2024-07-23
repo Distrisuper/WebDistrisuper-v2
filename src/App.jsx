@@ -2,6 +2,9 @@ import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-d
 import Home from './components/Home';
 import Layout from './components/Layout';
 import './App.css'
+import About from './components/About';
+import Contact from './components/Contact';
+import Product from './components/Product';
 
 function App() {
   return (
@@ -10,8 +13,32 @@ function App() {
         <Route
           path="/"
           element={
-            <Layout title="Inicio" breadcrum="">
+            <Layout>
               <Home />
+            </Layout>
+          }
+        />
+        <Route
+          path="/nosotros"
+          element={
+            <Layout>
+              <About />
+            </Layout>
+          }
+        />
+        <Route
+          path="/contacto"
+          element={
+            <Layout>
+              <Contact />
+            </Layout>
+          }
+        />
+        <Route
+          path="/productos"
+          element={
+            <Layout>
+              <Product />
             </Layout>
           }
         />

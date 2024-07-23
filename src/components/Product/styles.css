@@ -1,0 +1,68 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    /* Cada columna tiene 200px de ancho */
+    grid-template-rows: repeat(5, 200px);
+    /* Cada fila tiene 200px de alto */
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.div1,
+.div2,
+.div3,
+.div4,
+.div5,
+.div6,
+.div7 {
+    border-radius: 16px;
+    background-color: #D9D9D9;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Para centrar el texto */
+    padding: 10px;
+    /* Para evitar que el texto se pegue a los bordes */
+    transition: transform 1s ease, opacity 1s ease, width 1s ease, height 1s ease;
+    /* Animación para la transición */
+}
+
+.animate-category {
+    animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-text {
+    animation: fadeInOut 1s ease;
+}
+
+@keyframes fadeInOut {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.expanded {
+    grid-area: 1 / 1 / 6 / 6 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 10;
+}

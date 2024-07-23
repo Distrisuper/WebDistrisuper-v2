@@ -8,10 +8,10 @@ export default function Header() {
                 <div><a href="#"><img src={logo} width="300px" /></a></div>
                 <nav className="flex space-x-4 py-4">
                     <ul className="flex space-x-4 text-gray-800">
-                        <li><a href="#" className="hover:text-gray-400">Inicio</a></li>
-                        <li><a href="#" className="hover:text-gray-400">Nosotros</a></li>
-                        <li><a href="#" className="hover:text-gray-400">Productos</a></li>
-                        <li><a href="#" className="hover:text-gray-400">Contacto</a></li>
+                        <li><a href="/" className="hover:text-gray-400">Inicio</a></li>
+                        <li><a href="/nosotros" className="hover:text-gray-400">Nosotros</a></li>
+                        <li><a href="/productos" className="hover:text-gray-400">Productos</a></li>
+                        <li><a href="/contacto" className="hover:text-gray-400">Contacto</a></li>
                     </ul>
                 </nav>
             </div>

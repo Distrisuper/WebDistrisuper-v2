@@ -1,0 +1,56 @@
+.marquee {
+    height: 100px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.animate-scroll:hover {
+    animation-play-state: paused;
+}
+
+.animate-scroll {
+
+    width: max-content;
+    position: absolute;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    animation: moveSlideshow 148s linear infinite;
+}
+
+.animate-scroll img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+    margin: 10px;
+}
+
+@keyframes moveSlideshow {
+    100% {
+        transform: translateX(-3960px);
+    }
+}
+
+
+.text-with-lines {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.text-with-lines::before,
+.text-with-lines::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+    margin: 0 10px;
+}
+
+.text-with-lines span {
+    white-space: nowrap;
+    color: #666;
+    font-size: 1.5em;
+}
