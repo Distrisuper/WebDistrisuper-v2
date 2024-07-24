@@ -5,7 +5,7 @@ export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="bg-white p-4">
+        <header className="bg-white/90 p-4 fixed w-full lg:block z-50">
             <div className="container mx-auto flex justify-between items-center">
                 <div><a href="#"><img src={logo} className="w-40 lg:w-72" alt="Logo" /></a></div>
                 <div className="lg:hidden">
@@ -22,9 +22,9 @@ export default function Header() {
                 <nav className={`lg:flex lg:items-center ${isOpen ? "block" : "hidden"} w-full lg:w-auto`}>
                     <ul className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 text-gray-800 text-center lg:text-left mt-4 lg:mt-0">
                         <li><a href="/" className="hover:text-gray-400">Inicio</a></li>
-                        <li><a href="/nosotros" className="hover:text-gray-400">Nosotros</a></li>
-                        <li><a href="/productos" className="hover:text-gray-400">Productos</a></li>
-                        <li><a href="/contacto" className="hover:text-gray-400">Contacto</a></li>
+                        <li><a href="#productos" className="hover:text-gray-400">Productos</a></li>
+                        <li><a href="#nosotros" className="hover:text-gray-400">Nosotros</a></li>
+                        <li><a href="#contacto" className="hover:text-gray-400">Contacto</a></li>
                     </ul>
                 </nav>
             </div>

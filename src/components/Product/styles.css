@@ -8,6 +8,7 @@
     grid-row-gap: 10px;
 }
 
+/* Estilos para las tarjetas individuales */
 .div1,
 .div2,
 .div3,
@@ -30,6 +31,7 @@
     /* Animación para la transición */
 }
 
+/* Animación para la categoría */
 .animate-category {
     animation: slideIn 1s ease;
 }
@@ -46,6 +48,7 @@
     }
 }
 
+/* Animación para desvanecer texto */
 .fade-text {
     animation: fadeInOut 1s ease;
 }
@@ -60,9 +63,68 @@
     }
 }
 
+/* Clase para expansión */
 .expanded {
     grid-area: 1 / 1 / 6 / 6 !important;
     width: 100% !important;
     height: 100% !important;
     z-index: 10;
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 1366px) {
+    .parent {
+        grid-template-columns: repeat(3, 200px);
+        /* Ajusta el número de columnas */
+        grid-template-rows: repeat(3, 200px);
+        /* Ajusta el número de filas */
+    }
+}
+
+@media (max-width: 768px) {
+    .parent {
+        grid-template-columns: repeat(2, 150px);
+        /* Ajusta el número de columnas */
+        grid-template-rows: repeat(2, 150px);
+        /* Ajusta el número de filas */
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+    }
+
+    .div1,
+    .div2,
+    .div3,
+    .div4,
+    .div5,
+    .div6,
+    .div7 {
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        /* Reduce el padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .parent {
+        grid-template-columns: 1fr;
+        /* Una sola columna */
+        grid-template-rows: repeat(auto-fit, 100px);
+        /* Ajusta las filas automáticamente */
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+    }
+
+    .div1,
+    .div2,
+    .div3,
+    .div4,
+    .div5,
+    .div6,
+    .div7 {
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        border-radius: 8px;
+    }
 }

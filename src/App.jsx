@@ -5,50 +5,21 @@ import './App.css'
 import About from './components/About';
 import Contact from './components/Contact';
 import Product from './components/Product';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Layout>
-              <Home />
-            </Layout>
-          }
-        />
-        <Route
-          path="/nosotros"
-          element={
-            <Layout>
-              <About />
-            </Layout>
-          }
-        />
-        <Route
-          path="/contacto"
-          element={
-            <Layout>
-              <Contact />
-            </Layout>
-          }
-        />
-        <Route
-          path="/productos"
-          element={
-            <Layout>
-              <Product />
-            </Layout>
-          }
-        />
-        {/* Redirecciona a la página de inicio para rutas no definidas */}
-        <Route
-          path="*"
-          element={<Navigate to="/" replace />}
-        />
-      </Routes>
-    </Router>
+    <>
+      <Layout>
+        <Home />
+        <Product />
+        <About />
+        <Contact />
+        <Chatbot />
+      </Layout>
+
+
+    </>
   )
 }
 
