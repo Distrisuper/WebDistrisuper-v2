@@ -20,7 +20,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col justify-center items-center p-8 lg:p-24">
                 <span className="w-full flex items-center justify-center my-3">
-                    <h2 className="text-primary text-2xl lg:text-5xl leading-relaxed 2xl:leading-relaxed lg:leading-relaxed text-center px-16">
+                    <h2 className="text-primary text-xl lg:text-5xl leading-relaxed 2xl:leading-relaxed lg:leading-relaxed lg:text-center lg:px-16">
                         Nos enfocamos fuertemente en el <strong>servicio</strong>, <strong>calidad</strong> y <strong>disponibilidad</strong> de nuestros productos y en la continua <strong>innovación</strong>.
                     </h2>
                 </span>

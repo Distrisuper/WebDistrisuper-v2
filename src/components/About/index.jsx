@@ -9,7 +9,7 @@ export default function About() {
             </div>
             <div>
                 <h3 className="text-4xl font-semibold text-center py-12">Nuestra historia</h3>
-                <div className="flex flex-col gap-10 lg:flex-row lg:gap-20">
+                <div className="flex flex-col gap-10 lg:flex-row lg:gap-20 px-6">
                     <div className="max-w-sm mx-auto bg-white border rounded-lg overflow-hidden">
                         <div className="px-6 py-8">
                             <h2 className="text-gray-700 font-bold text-2xl mb-2 text-center">Nuestra visión</h2>
@@ -18,7 +18,7 @@ export default function About() {
                                 Ser los más elegidos por nuestros clientes, proveedores y colaboradores.
                             </p>
                         </div>
-                        <div className="h-2 bg-blue-500"></div>
+                        <div className="h-2 bg-secondary"></div>
                     </div>
                     <div className="max-w-sm mx-auto bg-white border rounded-lg overflow-hidden">
                         <div className="px-6 py-8">
@@ -28,7 +28,7 @@ export default function About() {
                                 Ser los más elegidos por nuestros clientes, proveedores y colaboradores.
                             </p>
                         </div>
-                        <div className="h-2 bg-blue-500"></div>
+                        <div className="h-2 bg-secondary"></div>
                     </div>
                 </div>
             </div>
