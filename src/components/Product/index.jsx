@@ -94,7 +94,7 @@ export default function Product() {
                     ))}
                 </div>
             </section>
-            <BrandCarousel />
+            {/* <BrandCarousel /> */}
         </>
     );
 }
