@@ -40,8 +40,8 @@ export default function About() {
                 <div className="relative h-auto mb-8 w-full">
                     <Timeline data={data} />
                 </div>
-                <div className="flex flex-col gap-10 lg:flex-row lg:gap-20 px-6">
-                    <div className="max-w-sm mx-auto bg-white border rounded-lg overflow-hidden">
+                <div className="flex flex-col gap-10 lg:flex-row lg:gap-20 px-6 mt-16">
+                    <div className="max-w-sm mx-auto bg-white border rounded-lg overflow-hidden border-b-4 border-b-secondary">
                         <div className="px-6 py-8">
                             <h2 className="text-gray-700 font-bold text-2xl mb-2 text-center">Nuestra visión</h2>
                             <p className="text-gray-600 text-center">
@@ -49,17 +49,14 @@ export default function About() {
                                 Ser los más elegidos por nuestros clientes, proveedores y colaboradores.
                             </p>
                         </div>
-                        <div className="h-2 bg-secondary"></div>
                     </div>
-                    <div className="max-w-sm mx-auto bg-white border rounded-lg overflow-hidden">
+                    <div className="max-w-sm mx-auto bg-white border rounded-lg overflow-hidden border-b-4 border-b-secondary">
                         <div className="px-6 py-8">
-                            <h2 className="text-gray-700 font-bold text-2xl mb-2 text-center">Nuestra visión</h2>
+                            <h2 className="text-gray-700 font-bold text-2xl mb-2 text-center">Nuestra misión</h2>
                             <p className="text-gray-600 text-center">
-                                Ser la empresa autopartista y agroindustrial más reconocida del país por innovación y servicios.
-                                Ser los más elegidos por nuestros clientes, proveedores y colaboradores.
+                                Somos una distribuidora mayorista de auto-partes dedicada a satisfacer las necesidades de nuestros clientes basándonos fuertemente en el servicio, calidad y disponibilidad de nuestros productos y en la continua innovación.
                             </p>
                         </div>
-                        <div className="h-2 bg-secondary"></div>
                     </div>
                 </div>
             </div>

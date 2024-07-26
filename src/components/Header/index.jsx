@@ -34,16 +34,16 @@ export default function Header() {
 
     return (
         <header className={`bg-white/90 p-4 fixed w-full z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-            <div className="container mx-auto flex justify-between items-center">
+            <div className="flex justify-between items-center">
                 <div>
-                    <a href="#"><img src={logo} className="w-40" alt="Logo" /></a>
+                    <a href="#"><img src={logo} className="w-52 lg:ml-20" alt="Logo" /></a>
                 </div>
                 <div className="lg:hidden">
                     <button onClick={toggleMenu} className="focus:outline-none">
                         <FontAwesomeIcon icon={isOpen ? faTimes : faBars} size="lg" />
                     </button>
                 </div>
-                <nav className={`lg:flex lg:items-center ${isOpen ? 'block' : 'hidden'} w-full lg:w-auto`}>
+                <nav className={`lg:flex lg:items-center ${isOpen ? 'block' : 'hidden'} w-full lg:w-auto lg:mr-12`}>
                     <ul className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 text-gray-800 text-center lg:text-left mt-4 lg:mt-0">
                         <li><a href="/" className="hover:text-gray-400">Inicio</a></li>
                         <li><a href="#productos" className="hover:text-gray-400">Productos</a></li>

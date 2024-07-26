@@ -10,48 +10,48 @@ export default function Home() {
         <>
             <div className="bg-base h-screen flex flex-col lg:flex-row items-center lg:justify-between px-8 lg:p-24">
                 <div className="w-full lg:w-1/2">
-                    <h1 className="text-primary text-3xl lg:text-5xl leading-relaxed lg:leading-relaxed 2xl:leading-relaxed mt-24 lg:mt-0">
-                        Somos un <strong>mayorista</strong> de <strong>autopartes</strong> orientados a <strong>casas de repuestos automotor, agro e industria</strong>
+                    <h1 className="text-primary text-3xl lg:text-5xl leading-snug lg:leading-snug 2xl:leading-snug mt-24 lg:mt-0">
+                        Somos <strong>mayorista</strong> de <strong>autopartes</strong> orientados a <strong>casas de repuestos automotor, agro e industria</strong>
                     </h1>
                 </div>
                 <div className="mt-8 lg:mt-0 lg:w-1/2">
                     <Slider />
                 </div>
             </div>
-            <div className="flex flex-col justify-center items-center p-8 lg:p-24">
+            <div className="flex flex-col justify-center items-center p-8 lg:p-16">
                 <span className="w-full flex items-center justify-center my-3">
-                    <h2 className="text-primary text-xl lg:text-5xl leading-relaxed 2xl:leading-relaxed lg:leading-relaxed lg:text-center lg:px-16">
-                        Nos enfocamos fuertemente en el <strong>servicio</strong>, <strong>calidad</strong> y <strong>disponibilidad</strong> de nuestros productos y en la continua <strong>innovación</strong>.
+                    <h2 className="text-primary text-xl lg:text-5xl leading-snug 2xl:leading-snug lg:leading-snug lg:text-center lg:px-16 text-balance">
+                        Nos enfocamos fuertemente en el <strong>servicio</strong>, <strong>calidad</strong> y <strong>disponibilidad</strong> de nuestros productos y en la contínua <strong>innovación</strong>.
                     </h2>
                 </span>
-                <div className="bg-secondary w-full lg:w-10/12 rounded-xl flex flex-col lg:flex-row p-8 lg:p-16 gap-8 lg:gap-16 2xl:gap-48 justify-center my-8 lg:my-16">
+                <div className="bg-secondary w-full lg:w-11/12 rounded-xl flex flex-col lg:flex-row p-8 lg:p-16 gap-8 lg:gap-20 2xl:gap-24 justify-center my-8 lg:my-16">
                     <div className="flex flex-col items-center" ref={ref}>
                         {inView && (
                             <>
-                                <span className="text-3xl xl:text-6xl font-extrabold text-white">
+                                <span className="text-3xl 2xl:text-8xl md:text-7xl font-extrabold text-white">
                                     <CountUp end={40} duration={2} prefix="+" />
                                 </span>
-                                <span className="text-white mt-2 text-lg lg:text-xl">Años de experiencia</span>
+                                <span className="text-white mt-2 text-lg lg:text-xl">Años de Experiencia</span>
                             </>
                         )}
                     </div>
                     <div className="flex flex-col items-center">
                         {inView && (
                             <>
-                                <span className="text-3xl xl:text-6xl font-extrabold text-white">
+                                <span className="text-3xl 2xl:text-8xl md:text-7xl font-extrabold text-white">
                                     <CountUp end={400} duration={2} prefix="+" />
                                 </span>
-                                <span className="text-white mt-2 text-lg lg:text-xl text-center">Pedidos entregados <br />cada día</span>
+                                <span className="text-white mt-2 text-lg lg:text-xl text-center text-balance">Pedidos Entregados por día</span>
                             </>
                         )}
                     </div>
                     <div className="flex flex-col items-center">
                         {inView && (
                             <>
-                                <span className="text-3xl xl:text-6xl font-extrabold text-white">
+                                <span className="text-3xl 2xl:text-8xl md:text-7xl font-extrabold text-white">
                                     <CountUp end={4000} duration={2} prefix="+" />
                                 </span>
-                                <span className="text-white mt-2 text-lg lg:text-xl">Localidades alcanzadas</span>
+                                <span className="text-white mt-2 text-lg lg:text-xl">Localidades Alcanzadas</span>
                             </>
                         )}
                     </div>

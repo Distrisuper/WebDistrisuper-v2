@@ -1,44 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Tooltip } from 'react-tooltip';
 import "./styles.css";
-import BrandCarousel from "../BrandCarousel";
 
 export default function Product() {
     const [categories, setCategories] = useState([
         "DIRECCIÓN",
-        "FRENO",
         "LÍQUIDOS",
-        "TRANSMISIÓN",
+        "FRENO",
+        "TREN DELANTERO",
         "SUSPENSIÓN",
-        "ENCENDIDO",
+        "TRANSMISIÓN",
         "AGROINDUSTRIA",
-        "TREN DELANTERO"
+        "ENCENDIDO"
     ]);
-    const [selectedCategory, setSelectedCategory] = useState("TREN DELANTERO");
     const [expandedCard, setExpandedCard] = useState(null);
-
-    useEffect(() => {
-        let interval;
-
-        if (expandedCard === null) {
-            interval = setInterval(() => {
-                setCategories(prevCategories => {
-                    const newCategories = [...prevCategories];
-                    const firstCategory = newCategories.shift();
-                    newCategories.push(firstCategory);
-                    return newCategories;
-                });
-            }, 4000);
-        }
-
-        return () => clearInterval(interval);
-    }, [expandedCard]);
-
-    useEffect(() => {
-        setSelectedCategory(categories[7]);
-    }, [categories]);
 
     const handleCardClick = (index) => {
         setExpandedCard(index);
@@ -52,39 +29,41 @@ export default function Product() {
     return (
         <>
             <section id="productos" className="bg-base h-auto flex flex-col gap-10 justify-center items-center w-full">
-                <h1 className="2xl:text-7xl 2xl:leading-relaxed md:text-6xl text-4xl text-center leading-relaxed md:leading-relaxed mt-16 fade-text text-primary">
-                    Nos especializamos en <br /><strong className="font-extrabold">{selectedCategory}</strong>
+                <h1 className="2xl:text-6xl 2xl:leading-relaxed md:text-5xl text-3xl text-center leading-relaxed md:leading-relaxed mt-16 fade-text text-primary">
+                    Nos especializamos en
                 </h1>
-                <div className="w-3/4">
-                    <div className="parent mb-16">
-                        {categories.slice(0, 7).map((category, index) => (
+                <div className="w-10/12 h-[70vh]">
+                    <div className="parent h-full">
+                        {categories.map((category, index) => (
                             <div
                                 key={index}
-                                className={`div${index + 1} cursor-pointer text-gray-700 animate-category ${expandedCard === index ? 'expanded' : 'hover:bg-secondary hover:text-white transition-all hover:scale-125'}`}
+                                className={`div${index + 1} card cursor-pointer text-gray-700 animate-category ${expandedCard === index ? 'expanded' : 'hover:bg-secondary hover:text-white transition-colors hover:drop-shadow-xl'}`}
                                 onClick={() => handleCardClick(index)}
                             >
-                                {expandedCard !== null && expandedCard === index ?
-                                    <>
-                                        <div className="h-full w-full flex flex-col items-center justify-center relative">
-                                            <button
-                                                onClick={handleCloseClick}
-                                                className="absolute top-4 right-4 bg-white h-12 w-12 flex justify-center items-center rounded-full"
-                                                data-tooltip-id="tooltip-cerrar" data-tooltip-content="Cerrar"
-                                            >
-                                                <FontAwesomeIcon icon={faTimes} size="lg" color="gray" />
-                                            </button>
-                                            <Tooltip place="bottom" type="dark" effect="solid" id="tooltip-cerrar" />
-                                            <p className="text-lg lg:text-4xl font-extrabold break-all text-center">{category}</p>
-                                        </div>
-                                    </>
-                                    :
-                                    <p className="text-lg lg:text-4xl font-extrabold break-all text-center">{category}</p>
-                                }
+                                <div className="card-inner">
+                                    <div className="card-front">
+                                        <p className="text-lg lg:text-4xl font-extrabold break-all text-center">{category}</p>
+                                    </div>
+                                    <div className="card-back">
+                                        {expandedCard === index && (
+                                            <div className="h-full w-full flex flex-col items-center justify-center relative">
+                                                <button
+                                                    onClick={handleCloseClick}
+                                                    className="absolute top-4 right-4 bg-white h-12 w-12 flex justify-center items-center rounded-full"
+                                                    data-tooltip-id="tooltip-cerrar" data-tooltip-content="Cerrar"
+                                                >
+                                                    <FontAwesomeIcon icon={faTimes} size="lg" color="gray" />
+                                                </button>
+                                                <Tooltip place="bottom" type="dark" effect="solid" id="tooltip-cerrar" />
+                                                <p className="text-lg lg:text-4xl font-extrabold break-all text-center">{category}</p>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>
                 </div>
-
             </section>
             {/* <BrandCarousel /> */}
         </>
