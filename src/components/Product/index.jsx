@@ -5,15 +5,16 @@ import { Tooltip } from 'react-tooltip';
 import "./styles.css";
 
 export default function Product() {
-    const [categories, setCategories] = useState([
+    const categories = [
         "SUSPENSIÓN",
         "DIRECCIÓN",
         "FRENO",
         "LÍQUIDOS",
         "ENCENDIDO",
         "TRANSMISIÓN",
-        "AGROINDUSTRIA"
-    ]);
+        "AGROINDUSTRIA",
+        "COMPLEMENTARIOS"
+    ];
     const [expandedCard, setExpandedCard] = useState(null);
 
     const handleCardClick = (index) => {
@@ -36,29 +37,27 @@ export default function Product() {
                         {categories.map((category, index) => (
                             <div
                                 key={index}
-                                className={`div${index + 1} card cursor-pointer text-gray-700 animate-category ${expandedCard === index ? 'expanded' : 'hover:bg-secondary hover:text-white transition-colors hover:drop-shadow-xl'}`}
+                                className={`div${index + 1} cursor-pointer text-gray-700 animate-category ${expandedCard === index ? 'expanded' : 'hover:bg-secondary hover:text-white transition-colors hover:drop-shadow-xl'}`}
                                 onClick={() => handleCardClick(index)}
                             >
-                                <div className="card-inner">
-                                    <div className="card-front">
-                                        <p className="text-lg lg:text-4xl font-extrabold break-all text-center">{category}</p>
-                                    </div>
-                                    <div className="card-back">
-                                        {expandedCard === index && (
-                                            <div className="h-full w-full flex flex-col items-center justify-center relative">
-                                                <button
-                                                    onClick={handleCloseClick}
-                                                    className="absolute top-4 right-4 bg-white h-12 w-12 flex justify-center items-center rounded-full"
-                                                    data-tooltip-id="tooltip-cerrar" data-tooltip-content="Cerrar"
-                                                >
-                                                    <FontAwesomeIcon icon={faTimes} size="lg" color="gray" />
-                                                </button>
-                                                <Tooltip place="bottom" type="dark" effect="solid" id="tooltip-cerrar" />
-                                                <p className="text-lg lg:text-4xl font-extrabold break-all text-center">{category}</p>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
+                                {expandedCard !== null && expandedCard === index ?
+                                    <>
+                                        <div className="h-full w-full flex flex-col items-center justify-center relative">
+                                            <button
+                                                onClick={handleCloseClick}
+                                                className="absolute top-4 right-4 bg-white h-12 w-12 flex justify-center items-center rounded-full"
+                                                data-tooltip-id="tooltip-cerrar" data-tooltip-content="Cerrar"
+                                            >
+                                                <FontAwesomeIcon icon={faTimes} size="lg" color="gray" />
+                                            </button>
+                                            <Tooltip place="bottom" type="dark" effect="solid" id="tooltip-cerrar" />
+                                            <p className="text-lg lg:text-4xl font-extrabold break-all text-center">{category}</p>
+
+                                        </div>
+                                    </>
+                                    :
+                                    <p className="text-lg lg:text-4xl font-extrabold break-all text-center">{category}</p>
+                                }
                             </div>
                         ))}
                     </div>
