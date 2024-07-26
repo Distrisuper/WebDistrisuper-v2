@@ -33,47 +33,49 @@ const Timeline = ({ data }) => {
     }, [data]);
 
     return (
-        <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
-            <div style={{ position: 'absolute', left: '50%', height: '100%', width: '2px', backgroundColor: '#ccc' }} />
-            {data.map((item, index) => {
-                refs.current[index] = refs.current[index] || React.createRef();
+        <div className='flex justify-end items-center'>
+            <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }} className='w-3/4'>
+                <div style={{ position: 'absolute', left: '50%', height: '100%', width: '2px', backgroundColor: '#ccc' }} />
+                {data.map((item, index) => {
+                    refs.current[index] = refs.current[index] || React.createRef();
 
-                return (
-                    <div key={item.year} ref={refs.current[index]} style={{ margin: '40px 0', position: 'relative', width: '100%' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
-                            <div style={{
-                                height: '20px',
-                                width: '20px',
-                                borderRadius: '50%',
-                                backgroundColor: selectedYear === item.year ? '#00AEEF' : '#ccc',
-                                margin: '0 10px'
-                            }} />
-                            <div style={{ fontSize: selectedYear === item.year ? '56px' : '32px', fontWeight: selectedYear === item.year ? 'bold' : 'normal', color: selectedYear === item.year ? '#00AEEF' : '#ccc' }}>
-                                {item.year}
+                    return (
+                        <div key={item.year} ref={refs.current[index]} style={{ margin: '40px 0', position: 'relative', width: '100%' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
+                                <div style={{
+                                    height: '20px',
+                                    width: '20px',
+                                    borderRadius: '50%',
+                                    backgroundColor: selectedYear === item.year ? '#00AEEF' : '#ccc',
+                                    margin: '0 10px'
+                                }} />
+                                <div style={{ fontSize: selectedYear === item.year ? '56px' : '32px', fontWeight: selectedYear === item.year ? 'bold' : 'normal', color: selectedYear === item.year ? '#00AEEF' : '#ccc' }}>
+                                    {item.year}
+                                </div>
                             </div>
+                            {selectedYear === item.year && (
+                                <div style={{
+                                    position: 'absolute',
+                                    left: '50%',
+                                    transform: 'translateX(-50%)',
+                                    top: '0px',
+                                    padding: '20px',
+                                    backgroundColor: '#fff',
+                                    border: '1px solid #ccc',
+                                    borderBottom: '3px solid #1B9FC6',
+                                    borderRadius: '5px',
+                                    width: '500px',
+                                    textAlign: 'left'
+                                }}
+                                    className='border-b-4 border-b-secondary'
+                                >
+                                    <p className='text-balance text-lg text-gray-700 text-center'>{item.text}</p>
+                                </div>
+                            )}
                         </div>
-                        {selectedYear === item.year && (
-                            <div style={{
-                                position: 'absolute',
-                                left: '50%',
-                                transform: 'translateX(-50%)',
-                                top: '0px',
-                                padding: '20px',
-                                backgroundColor: '#fff',
-                                border: '1px solid #ccc',
-                                borderBottom: '3px solid #1B9FC6',
-                                borderRadius: '5px',
-                                width: '500px',
-                                textAlign: 'left'
-                            }}
-                                className='border-b-4 border-b-secondary'
-                            >
-                                <p className='text-balance text-lg text-gray-700 text-center'>{item.text}</p>
-                            </div>
-                        )}
-                    </div>
-                );
-            })}
+                    );
+                })}
+            </div>
         </div>
     );
 };

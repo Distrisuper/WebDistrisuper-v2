@@ -21,22 +21,22 @@ export default function Contact() {
 
     return (
         <section id="contacto">
-            <div className="bg-base h-[50vh] flex flex-col gap-10 justify-center items-center">
+            <div className="bg-base h-[50vh] flex flex-col gap-10 justify-center items-center mt-16">
                 <h1 className="text-center text-4xl lg:text-6xl font-bold">Contactános</h1>
 
             </div>
-            <div className="flex flex-row lg:justify-center gap-0 lg:gap-20 w-full flex-wrap p-4 lg:p-8">
+            <div className="flex flex-row lg:justify-center gap-0 lg:gap-20 w-full flex-wrap p-4 lg:p-8 text-gray-700">
                 <div className="flex flex-row items-center gap-4 mt-10 lg:mt-0">
-                    <div className="bg-secondary h-16 w-16 rounded-full flex justify-center items-center">
-                        <FontAwesomeIcon icon={faEnvelope} size="xl" color="white" />
+                    <div className="bg-secondary h-12 w-12 rounded-full flex justify-center items-center">
+                        <FontAwesomeIcon icon={faEnvelope} size="lg" color="white" />
                     </div>
-                    <p className="text-lg lg:text-4xl font-semibold text-center lg:py-12">info.distrisuper@gmail.com</p>
+                    <p className="text-lg lg:text-2xl font-semibold text-center lg:py-12">info.distrisuper@gmail.com</p>
                 </div>
                 <div className="flex flex-row items-center gap-4 mt-4 lg:mb-0 lg:mt-0">
-                    <div className="bg-secondary h-16 w-16 rounded-full flex justify-center items-center">
-                        <FontAwesomeIcon icon={faPhone} size="xl" color="white" />
+                    <div className="bg-secondary h-12 w-12 rounded-full flex justify-center items-center">
+                        <FontAwesomeIcon icon={faPhone} size="lg" color="white" />
                     </div>
-                    <p className="text-lg lg:text-4xl font-semibold text-center lg:py-12">0810-666-4500</p>
+                    <p className="text-lg lg:text-2xl font-semibold text-center lg:py-12">0810-666-4500</p>
                 </div>
             </div>
             <div className="w-full flex flex-col lg:flex-row lg:gap-20 gap-5 justify-center items-center p-8 lg:p-0">
@@ -59,8 +59,8 @@ export default function Contact() {
                 </div>
             </div>
             <div className="flex flex-col items-center">
-                <div className="flex flex-row justify-between w-full lg:px-24 mb-8 mt-24">
-                    <h1 className="text-4xl font-bold ">Nuestras sucursales</h1>
+                <div className="flex flex-row justify-center gap-20 w-full mb-8 mt-24">
+                    <h1 className="text-4xl font-bold text-gray-700">Encontranos en: </h1>
                     <select
                         className="mb-4 p-2  border-2 border-secondary text-secondary rounded outline-secondary"
                         onChange={handleSucursalChange}

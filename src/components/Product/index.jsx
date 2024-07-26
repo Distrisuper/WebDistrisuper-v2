@@ -6,14 +6,13 @@ import "./styles.css";
 
 export default function Product() {
     const [categories, setCategories] = useState([
-        "DIRECCIÓN",
-        "LÍQUIDOS",
-        "FRENO",
-        "TREN DELANTERO",
         "SUSPENSIÓN",
+        "DIRECCIÓN",
+        "FRENO",
+        "LÍQUIDOS",
+        "ENCENDIDO",
         "TRANSMISIÓN",
-        "AGROINDUSTRIA",
-        "ENCENDIDO"
+        "AGROINDUSTRIA"
     ]);
     const [expandedCard, setExpandedCard] = useState(null);
 
@@ -30,7 +29,7 @@ export default function Product() {
         <>
             <section id="productos" className="bg-base h-auto flex flex-col gap-10 justify-center items-center w-full">
                 <h1 className="2xl:text-6xl 2xl:leading-relaxed md:text-5xl text-3xl text-center leading-relaxed md:leading-relaxed mt-16 fade-text text-primary">
-                    Nos especializamos en
+                    Nos especializamos en <strong>TREN DELANTERO</strong>
                 </h1>
                 <div className="w-10/12 h-[70vh]">
                     <div className="parent h-full">
