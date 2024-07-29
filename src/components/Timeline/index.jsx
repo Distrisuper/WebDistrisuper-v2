@@ -33,15 +33,15 @@ const Timeline = ({ data }) => {
     }, [data]);
 
     return (
-        <div className='flex justify-end items-center'>
+        <div className='flex justify-center md:justify-end items-center'>
             <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }} className='w-3/4'>
                 <div style={{ position: 'absolute', left: '50%', height: '100%', width: '2px', backgroundColor: '#ccc' }} />
                 {data.map((item, index) => {
                     refs.current[index] = refs.current[index] || React.createRef();
 
                     return (
-                        <div key={item.year} ref={refs.current[index]} style={{ margin: '40px 0', position: 'relative', width: '100%' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
+                        <div key={item.year} ref={refs.current[index]} className="my-4 md:my-[40px] relative w-full">
+                            <div className='flex items-center relative justify-center sm:justify-normal'>
                                 <div style={{
                                     height: '20px',
                                     width: '20px',
@@ -56,18 +56,15 @@ const Timeline = ({ data }) => {
                             {selectedYear === item.year && (
                                 <div style={{
                                     position: 'absolute',
-                                    left: '50%',
-                                    transform: 'translateX(-50%)',
-                                    top: '0px',
                                     padding: '20px',
                                     backgroundColor: '#fff',
                                     border: '1px solid #ccc',
                                     borderBottom: '3px solid #1B9FC6',
                                     borderRadius: '5px',
-                                    width: '500px',
-                                    textAlign: 'left'
+                                    textAlign: 'left',
+                                    zIndex: 50
                                 }}
-                                    className='border-b-4 border-b-secondary'
+                                    className='w-[300px] -inset-x-12 md:inset-x-1/2 md:top-0 md:-translate-x-1/2 mx-6 md:mx-0 md:w-[500px] border-b-4 border-b-secondary'
                                 >
                                     <p className='text-balance text-lg text-gray-700 text-center'>{item.text}</p>
                                 </div>

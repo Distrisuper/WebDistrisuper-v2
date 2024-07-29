@@ -62,7 +62,7 @@ export default function Slider() {
             loop={true}
             spaceBetween={50}
             slidesPerView={1}
-            className="w-1/2 h-full flex justify-center items-center"
+            className="w-full md:w-1/2 h-full flex justify-center items-center"
         >
             {slides.map((slide) => (
                 <SwiperSlide

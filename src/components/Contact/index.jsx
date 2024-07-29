@@ -21,7 +21,7 @@ export default function Contact() {
 
     return (
         <section id="contacto">
-            <div className="bg-base h-[50vh] flex flex-col gap-10 justify-center items-center mt-16">
+            <div className="bg-base h-64 md:h-[50vh] flex flex-col gap-10 justify-center items-center mt-16">
                 <h1 className="text-center text-4xl lg:text-6xl font-bold">Contactános</h1>
 
             </div>
@@ -59,11 +59,11 @@ export default function Contact() {
                 </div>
             </div>
             <div className="flex flex-col items-center">
-                <div className="flex flex-row justify-center items-center gap-20 w-full mb-8 mt-24">
-                    <h1 className="text-5xl font-bold text-gray-700">Encontranos en: </h1>
+                <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-20 w-full mb-8 mt-16 md:mt-24">
+                    <h1 className="text-xl md:text-5xl font-bold text-gray-700">Encontranos en: </h1>
                     <div className="relative inline-block">
                         <select
-                            className="p-3 px-16 border border-secondary text-secondary rounded outline-secondary appearance-none "
+                            className="focus:bg-white bg-gray-100/70 py-3 px-16 border border-secondary text-secondary rounded outline-secondary appearance-none"
                             onChange={handleSucursalChange}
                         >
                             {sucursales.map((sucursal) => (
@@ -72,7 +72,7 @@ export default function Contact() {
                                 </option>
                             ))}
                         </select>
-                        <div className="absolute inset-y-0 right-6 flex items-center px-2 pointer-events-none">
+                        <div className="absolute inset-y-0 right-2 md:right-6 flex items-center px-2 pointer-events-none">
                             <FontAwesomeIcon icon={faChevronDown} className="text-secondary" />
                         </div>
                     </div>

@@ -134,7 +134,7 @@ export default function Product() {
                         {categories.map((category, index) => (
                             <div
                                 key={index}
-                                className={`div${index + 1} cursor-pointer text-gray-700 ${expandedCard === index ? 'expanded shadow overflow-auto' : 'hover:bg-secondary hover:text-white transition-all hover:drop-shadow-xl hover:-translate-y-3 duration-300'}`}
+                                className={`div${index + 1} cursor-pointer text-gray-700 ${expandedCard === index ? 'expanded shadow ' : 'hover:bg-secondary hover:text-white transition-all hover:drop-shadow-xl hover:-translate-y-3 duration-300'}`}
                                 onClick={() => handleCardClick(index)}
                             >
                                 {expandedCard === index ?
@@ -150,8 +150,7 @@ export default function Product() {
                                             <Tooltip place="bottom" type="dark" effect="solid" id="tooltip-cerrar" />
                                             <h3 className="mt-8 text-lg lg:text-4xl font-extrabold break-all text-center">{category}</h3>
                                             {getCategoryDetails(category)?.productos.length > 0 ?
-                                                <>
-                                                    <p className="mt-4 text-left w-3/4 font-semibold text-lg">Tipos de productos:</p>
+                                                <div className="flex flex-row w-full mt-2">
                                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-3/4 mt-4">
                                                         {
                                                             getCategoryDetails(category)?.productos?.map((producto, idx) => (
@@ -162,15 +161,14 @@ export default function Product() {
                                                         }
                                                     </div>
 
-                                                    <p className="pt-6 text-left w-3/4 font-semibold text-lg">Marcas:</p>
-                                                    <div className="flex flex-row justify-center items-center gap-16 w-3/4 py-6">
+                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-1/4 mt-4">
                                                         {getCategoryDetails(category).marcas?.map((img, idx) => (
                                                             <div className="w-12 h-12">
                                                                 <img key={idx} src={img} alt={`Image ${idx + 1}`} className="w-full h-auto object-cover" />
                                                             </div>
                                                         ))}
                                                     </div>
-                                                </>
+                                                </div>
                                                 :
                                                 <p className="text-center text-lg mt-8">Próximamente añadiremos productos</p>
                                             }

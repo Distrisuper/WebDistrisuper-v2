@@ -33,7 +33,7 @@ export default function Header() {
     }, []);
 
     return (
-        <header className={`bg-white/90 p-4 fixed w-full z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+        <header className={`bg-white/90 p-4 fixed w-full z-[999] transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="flex justify-between items-center">
                 <div>
                     <a href="#"><img src={logo} className="w-52 lg:ml-20" alt="Logo" /></a>

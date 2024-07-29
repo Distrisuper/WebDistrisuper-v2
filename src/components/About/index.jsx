@@ -37,7 +37,7 @@ export default function About() {
         <section id="nosotros">
 
             <div>
-                <h3 className="text-5xl font-semibold text-center py-24 text-gray-700">Nuestra historia</h3>
+                <h3 className="text-5xl font-semibold text-center md:py-24 pt-20 pb-10 text-gray-700">Nuestra historia</h3>
                 <div className="relative h-auto mb-8 w-full">
                     <Timeline data={data} />
                 </div>

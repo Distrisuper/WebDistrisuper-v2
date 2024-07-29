@@ -14,7 +14,7 @@ export default function Home() {
                         Somos <strong>mayorista</strong> de <strong>autopartes</strong> orientados a <strong>casas de repuestos automotor, agro e industria</strong>
                     </h1>
                 </div>
-                <div className="mt-8 lg:mt-0 lg:w-1/2">
+                <div className="w-full lg:mt-0 lg:w-1/2">
                     <Slider />
                 </div>
             </div>
@@ -24,7 +24,7 @@ export default function Home() {
                         Nos enfocamos fuertemente en el <strong>servicio</strong>, <strong>calidad</strong> y <strong>disponibilidad</strong> de nuestros productos y en la contínua <strong>innovación</strong>.
                     </h2>
                 </span>
-                <div className="bg-secondary w-full lg:w-11/12 rounded-xl flex flex-col lg:flex-row p-8 lg:p-16 gap-8 lg:gap-20 2xl:gap-24 justify-center my-8 lg:my-16">
+                <div className="bg-secondary w-full lg:w-11/12 rounded-xl flex flex-col lg:flex-row p-8 lg:p-16 gap-8 lg:gap-20 2xl:gap-24 justify-center my-8 lg:mt-16 mb-12">
                     <div className="flex flex-col items-center" ref={ref}>
                         {inView && (
                             <>

@@ -7,8 +7,8 @@ export default function Footer() {
     return (
         <>
             <footer className="pt-12 lg:pt-16 relative bg-base">
-                <div className="flex flex-row justify-between w-full px-20">
-                    <div className="w-full md:w-1/3 lg:mb-8 flex justify-start">
+                <div className="flex flex-col-reverse md:flex-row justify-between w-full px-20 flex-wrap">
+                    <div className="w-full md:w-1/3 mb-8 flex justify-center md:justify-start">
                         <div className="text-gray-700 text-center lg:text-left">
                             <h4 className="text-lg font-bold mb-4">Links</h4>
                             <ul className="space-y-2">
@@ -19,30 +19,30 @@ export default function Footer() {
                             </ul>
                         </div>
                     </div>
-                    <ul className="flex space-x-4 lg:mb-4 mb-8 w-1/3">
+                    <ul className="flex space-x-4 lg:mb-4 mb-8 w-full md:w-1/3">
                         <li>
-                            <a href="https://www.facebook.com/distrisuper" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600">
+                            <a href="https://www.facebook.com/distrisuper" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600 transition-all hover:scale-110">
                                 <FontAwesomeIcon icon={faFacebookF} size="lg" />
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/distrisuperautopartes/" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600">
+                            <a href="https://www.instagram.com/distrisuperautopartes/" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600 transition-all hover:scale-110">
                                 <FontAwesomeIcon icon={faInstagram} size="lg" />
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:info.distrisuper@gmail.com" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600">
+                            <a href="mailto:info.distrisuper@gmail.com" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600 transition-all hover:scale-110">
                                 <FontAwesomeIcon icon={faEnvelope} size="lg" />
                             </a>
                         </li>
                         <li>
-                            <a href="https://api.whatsapp.com/send/?phone=5492236208620&text&type=phone_number&app_absent=0" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600">
+                            <a href="https://api.whatsapp.com/send/?phone=5492236208620&text&type=phone_number&app_absent=0" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600 transition-all hover:scale-110">
                                 <FontAwesomeIcon icon={faPhone} size="lg" />
                             </a>
                         </li>
                     </ul>
                     <div>
-                        <img src={logo} width={300} />
+                        <img src={logo} width={300} className="mb-8 md:mb-0" />
                     </div>
 
 
