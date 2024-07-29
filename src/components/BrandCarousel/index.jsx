@@ -9,7 +9,7 @@ const BrandCarousel = () => {
     }));
 
     return (
-        <section id='marcas'>
+        <section id='marcas' className='bg-base pb-10'>
             <h2 className='text-center pb-8 pt-12 text-2xl md:text-4xl text-gray-700 font-bold'>Marcas</h2>
             <div className="marquee mb-16">
                 <div className="flex items-center animate-scroll grayscale hover:grayscale-0 transition-all cursor-pointer ">

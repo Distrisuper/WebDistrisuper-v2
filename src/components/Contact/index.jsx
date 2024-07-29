@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import FormInput from "../Inputs/FormInput";
 
 const sucursales = [
@@ -59,18 +59,23 @@ export default function Contact() {
                 </div>
             </div>
             <div className="flex flex-col items-center">
-                <div className="flex flex-row justify-center gap-20 w-full mb-8 mt-24">
-                    <h1 className="text-4xl font-bold text-gray-700">Encontranos en: </h1>
-                    <select
-                        className="mb-4 p-2  border-2 border-secondary text-secondary rounded outline-secondary"
-                        onChange={handleSucursalChange}
-                    >
-                        {sucursales.map((sucursal) => (
-                            <option key={sucursal.name} value={sucursal.name}>
-                                {sucursal.name}
-                            </option>
-                        ))}
-                    </select>
+                <div className="flex flex-row justify-center items-center gap-20 w-full mb-8 mt-24">
+                    <h1 className="text-5xl font-bold text-gray-700">Encontranos en: </h1>
+                    <div className="relative inline-block">
+                        <select
+                            className="p-3 px-16 border border-secondary text-secondary rounded outline-secondary appearance-none "
+                            onChange={handleSucursalChange}
+                        >
+                            {sucursales.map((sucursal) => (
+                                <option key={sucursal.name} value={sucursal.name}>
+                                    {sucursal.name}
+                                </option>
+                            ))}
+                        </select>
+                        <div className="absolute inset-y-0 right-6 flex items-center px-2 pointer-events-none">
+                            <FontAwesomeIcon icon={faChevronDown} className="text-secondary" />
+                        </div>
+                    </div>
                 </div>
                 <div className="w-full h-96">
                     <iframe

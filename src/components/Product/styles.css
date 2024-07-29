@@ -91,6 +91,7 @@
 
 /* Clase para expansión */
 .expanded {
+    background-color: #fff;
     grid-area: 1 / 1 / 9 / 9;
     width: 100% !important;
     height: 100% !important;
