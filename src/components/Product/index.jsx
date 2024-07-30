@@ -44,7 +44,7 @@ export default function Product() {
 
             ],
 
-            "fondo": "/fondo-suspension.svg"
+            "fondo": "/fondos/fondo-suspension.svg"
         },
         "LÍQUIDOS": {
             "productos": [
@@ -60,7 +60,8 @@ export default function Product() {
                 "/logosblancos/ENERBAT.png",
                 "/logosblancos/MAHLE.png",
                 "/logosblancos/nakata.png",
-                "/logosblancos/thompson.png",]
+                "/logosblancos/thompson.png",],
+            "fondo": "/fondos/fondo-liquidos.svg"
         },
         "DIRECCIÓN": {
             "productos": [
@@ -74,7 +75,9 @@ export default function Product() {
                 "/logosblancos/ENERBAT.png",
                 "/logosblancos/MAHLE.png",
                 "/logosblancos/nakata.png",
-                "/logosblancos/thompson.png",]
+                "/logosblancos/thompson.png",],
+
+            "fondo": "/fondos/fondo-direccion.svg"
         },
         "FRENO": {
             "productos": [
@@ -86,7 +89,9 @@ export default function Product() {
                 "Flexibles",
                 "Depresores"
             ],
-            "marcas": []
+            "marcas": [],
+
+            "fondo": "/fondos/fondo-freno.svg"
         },
         "TRANSMISIÓN": {
             "productos": [
@@ -99,13 +104,25 @@ export default function Product() {
                 "Fuelles y Topes",
                 "Rodamientos"
             ],
-            "marcas": []
+            "marcas": [],
+
+            "fondo": "/fondos/fondo-transmision.svg"
         },
         "ENCENDIDO": {
             "productos": [
                 "Bujías"
             ],
-            "marcas": []
+            "marcas": [],
+
+            "fondo": "/fondos/fondo-encendido.svg"
+        },
+        "AGROINDUSTRIA": {
+            "productos": [
+
+            ],
+            "marcas": [],
+
+            "fondo": "/fondos/fondo-agroindustria.svg"
         },
         "COMPLEMENTARIOS": {
             "productos": [
@@ -113,18 +130,34 @@ export default function Product() {
                 "Soportes",
                 "Resortes de Portón"
             ],
-            "marcas": []
+            "marcas": [],
+
+            "fondo": "/fondos/fondo-suspension.svg"
         }
     };
     const [expandedCard, setExpandedCard] = useState(null);
 
     const handleCardClick = (index) => {
-        setExpandedCard(expandedCard === index ? null : index);
+        setExpandedCard(index);
+    };
+
+    const handleMove = (cantidadAMover) => {
+        setExpandedCard((prevIndex) => {
+            const newIndex = prevIndex + cantidadAMover;
+            if (newIndex >= categories.length) return 0;
+            if (newIndex < 0) return categories.length - 1;
+            return newIndex;
+        });
     };
 
     const handleCloseClick = (e) => {
         e.stopPropagation();
         setExpandedCard(null);
+    };
+
+    const handleNavigationClick = (e, cantidadAMover) => {
+        e.stopPropagation();
+        handleMove(cantidadAMover);
     };
 
     const getCategoryDetails = (categoryName) => {
@@ -144,12 +177,12 @@ export default function Product() {
                             <div
                                 key={index}
                                 style={{ backgroundImage: expandedCard === index ? `url(${getCategoryDetails(category)?.fondo})` : '' }}
-                                className={`div${index + 1} cursor-pointer text-white ${expandedCard === index ? 'expanded shadow' : 'hover:bg-secondary hover:text-white transition-all hover:drop-shadow-xl hover:-translate-y-3 duration-300'} ${expandedCard !== index && expandedCard !== null ? 'opacity-0' : ''}`}
+                                className={`div${index + 1} cursor-pointer text-gray-700 ${expandedCard === index ? 'expanded shadow' : 'hover:bg-secondary hover:text-white transition-colors hover:drop-shadow-xl hover:-translate-y-3 duration-300'} ${expandedCard !== index && expandedCard !== null ? 'opacity-0' : ''}`}
                                 onClick={() => handleCardClick(index)}
                             >
                                 {expandedCard === index ?
                                     <>
-                                        <div className="h-full w-full flex flex-col 2xl:py-10 relative px-36 justify-center">
+                                        <div className="h-full w-full text-white flex flex-col 2xl:py-10 relative px-36 justify-center">
 
                                             <button
                                                 onClick={handleCloseClick}
@@ -164,7 +197,7 @@ export default function Product() {
 
 
                                             <button
-                                                onClick={handleCloseClick}
+                                                onClick={(e) => handleNavigationClick(e, -1)}
                                                 className="absolute top-1/2 -translate-y-1/2 left-4 border text-white/60 hover:text-white border-white/60 hover:border-white transition-colors 2xl:h-16 2xl:w-16 h-12 w-12 flex justify-center items-center rounded-full"
                                                 data-tooltip-id="tooltip-anterior" data-tooltip-content="Anterior"
                                             >
@@ -172,7 +205,7 @@ export default function Product() {
                                             </button>
 
                                             <button
-                                                onClick={handleCloseClick}
+                                                onClick={(e) => handleNavigationClick(e, 1)}
                                                 className="absolute top-1/2 -translate-y-1/2 right-4 border text-white/60 hover:text-white border-white/60 hover:border-white transition-colors 2xl:h-16 2xl:w-16 h-12 w-12 flex justify-center items-center rounded-full"
                                                 data-tooltip-id="tooltip-siguiente" data-tooltip-content="Siguiente"
                                             >
@@ -182,7 +215,7 @@ export default function Product() {
                                             <h3 className="mt-8 text-lg lg:text-6xl 2xl:text-7xl font-extrabold self-start" dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '') }} />
                                             {getCategoryDetails(category)?.productos.length > 0 ?
                                                 <div className="flex flex-col w-full mt-2">
-                                                    <div className="grid grid-cols-1 sm:grid-cols-2 w-3/4 mt-4">
+                                                    <div className="grid grid-cols-1 sm:grid-cols-2 mt-4">
                                                         {
                                                             getCategoryDetails(category)?.productos?.map((producto, idx) => (
                                                                 <p key={idx} className="p-1 rounded-md text-center flex items-center gap-5 text-lg 2xl:text-2xl">
@@ -206,7 +239,7 @@ export default function Product() {
                                         </div>
                                     </>
                                     :
-                                    <p className="text-lg lg:text-5xl font-extrabold text-center" dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '<wbr />').toUpperCase() }} />
+                                    <p className="text-lg lg:text-5xl font-extrabold text-center " dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '<wbr />').toUpperCase() }} />
                                 }
                             </div>
                         ))}

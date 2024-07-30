@@ -8,9 +8,9 @@ export default function Home() {
     const [ref, inView] = useInView({ triggerOnce: true });
     return (
         <>
-            <div className="bg-base h-screen flex flex-col lg:flex-row items-center lg:justify-between px-8 lg:p-24">
+            <div style={{ backgroundImage: `url(/fondo-home.svg)` }} className="h-screen flex flex-col lg:flex-row items-center lg:justify-between px-8 lg:p-24 bg-cover">
                 <div className="w-full lg:w-1/2">
-                    <h1 className="text-primary text-3xl lg:text-5xl leading-snug lg:leading-snug 2xl:leading-snug mt-24 lg:mt-0">
+                    <h1 className="text-white text-3xl lg:text-5xl leading-snug lg:leading-snug 2xl:leading-snug mt-24 lg:mt-0">
                         Somos <strong>mayorista</strong> de <strong>autopartes</strong> orientados a <strong>casas de repuestos automotor, agro e industria</strong>
                     </h1>
                 </div>
