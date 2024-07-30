@@ -2,27 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import logo from '/logo.png';
+import logoBlanco from '/logo-blanco.webp';
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
-    const [isVisible, setIsVisible] = useState(true);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
     useEffect(() => {
-        let lastScrollY = window.scrollY;
-
         const handleScroll = () => {
-            if (window.scrollY < 100) {
-                setIsVisible(true);
-            } else if (window.scrollY > lastScrollY) {
-                setIsVisible(false);
+            if (window.scrollY > 100) {
+                setIsScrolled(true);
             } else {
-                setIsVisible(true);
+                setIsScrolled(false);
             }
-            lastScrollY = window.scrollY;
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -33,10 +29,10 @@ export default function Header() {
     }, []);
 
     return (
-        <header className={`bg-white/90 p-4 fixed w-full z-[999] transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+        <header className={`p-4 fixed w-full z-[999] transition-all duration-300 ${isScrolled ? 'bg-white text-gray-800' : 'bg-transparent text-white'} ${isScrolled ? '-translate-y-0' : 'translate-y-0'}`}>
             <div className="flex justify-between items-center">
                 <div>
-                    <a href="#"><img src={logo} className="w-52 lg:ml-20" alt="Logo" /></a>
+                    <a href="#"><img src={isScrolled ? logo : logoBlanco} className="w-52 lg:ml-20" alt="Logo" /></a>
                 </div>
                 <div className="lg:hidden">
                     <button onClick={toggleMenu} className="focus:outline-none">
@@ -44,11 +40,11 @@ export default function Header() {
                     </button>
                 </div>
                 <nav className={`lg:flex lg:items-center ${isOpen ? 'block' : 'hidden'} w-full lg:w-auto lg:mr-12`}>
-                    <ul className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 text-gray-800 text-center lg:text-left mt-4 lg:mt-0">
-                        <li><a href="/" className="hover:text-blue-500 transition-all ">Inicio</a></li>
-                        <li><a href="#productos" className="hover:text-blue-500 transition-all ">Productos</a></li>
-                        <li><a href="#nosotros" className="hover:text-blue-500 transition-all ">Nosotros</a></li>
-                        <li><a href="#contacto" className="hover:text-blue-500 transition-all ">Contacto</a></li>
+                    <ul className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 text-center lg:text-left mt-4 lg:mt-0">
+                        <li><a href="/" className="hover:text-blue-500 transition-all">Inicio</a></li>
+                        <li><a href="#productos" className="hover:text-blue-500 transition-all">Productos</a></li>
+                        <li><a href="#nosotros" className="hover:text-blue-500 transition-all">Nosotros</a></li>
+                        <li><a href="#contacto" className="hover:text-blue-500 transition-all">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
@@ -62,10 +58,10 @@ export default function Header() {
                     </div>
                     <nav>
                         <ul className="flex flex-col space-y-4 text-gray-800 text-center mt-2 mb-6">
-                            <li><a href="/" className="hover:text-blue-500 transition-all ">Inicio</a></li>
-                            <li><a href="#nosotros" className="hover:text-blue-500 transition-all ">Nosotros</a></li>
-                            <li><a href="#productos" className="hover:text-blue-500 transition-all ">Productos</a></li>
-                            <li><a href="#contacto" className="hover:text-blue-500 transition-all ">Contacto</a></li>
+                            <li><a href="/" className="hover:text-blue-500 transition-all">Inicio</a></li>
+                            <li><a href="#nosotros" className="hover:text-blue-500 transition-all">Nosotros</a></li>
+                            <li><a href="#productos" className="hover:text-blue-500 transition-all">Productos</a></li>
+                            <li><a href="#contacto" className="hover:text-blue-500 transition-all">Contacto</a></li>
                         </ul>
                     </nav>
                 </div>

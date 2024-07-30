@@ -21,71 +21,81 @@ export default function Contact() {
 
     return (
         <section id="contacto">
-            <div className="bg-base h-64 md:h-[50vh] flex flex-col gap-10 justify-center items-center mt-16">
-                <h1 className="text-center text-4xl lg:text-6xl font-bold">Contactános</h1>
+            <div className="bg-base flex flex-col items-center md:px-12 md:pt-16">
+                <div className="flex flex-row items-center">
+                    <div className="w-full md:w-2/5 rounded-lg flex items-start justify-start">
+                        <img width="50%" height="auto" src="/rodamiento.png" />
+                    </div>
+                    <div className="w-full md:w-3/5 flex flex-col gap-10">
+                        <h1 className="text-secondary text-left leading-snug text-4xl lg:text-7xl lg:leading-tight font-extrabold w-full ">Comunicate con nosotros</h1>
+                        <form className="w-full md:w-1/2 space-y-4 w">
+                            <FormInput type="text" placeholder="Nombre y Apellido" />
+                            <FormInput type="email" placeholder="E-mail" />
+                            <FormInput type="text" placeholder="Teléfono (opcional)" />
+                            <div>
+                                <label className='font-semibold'>Mensaje</label>
+                                <textarea
+                                    className="w-full p-2 border border-gray-300 rounded mt-1 outline-secondary"
+                                ></textarea>
+                            </div>
+                            <div className="w-full md:w-1/2">
+                                <button className="bg-secondary hover:scale-105 transition-transform text-white p-2 px-16 font-bold shadow-md rounded active:bg-sky-500">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
 
-            </div>
-            <div className="flex flex-row lg:justify-center gap-0 lg:gap-20 w-full flex-wrap p-4 lg:p-8 text-gray-700">
-                <div className="flex flex-row items-center gap-4 mt-10 lg:mt-0">
-                    <div className="bg-secondary h-12 w-12 rounded-full flex justify-center items-center">
-                        <FontAwesomeIcon icon={faEnvelope} size="lg" color="white" />
-                    </div>
-                    <p className="text-lg lg:text-2xl font-semibold text-center lg:py-12">info.distrisuper@gmail.com</p>
+
                 </div>
-                <div className="flex flex-row items-center gap-4 mt-4 lg:mb-0 lg:mt-0">
-                    <div className="bg-secondary h-12 w-12 rounded-full flex justify-center items-center">
-                        <FontAwesomeIcon icon={faPhone} size="lg" color="white" />
+
+
+
+                <div className="flex flex-row lg:justify-center gap-0 lg:gap-20 w-full flex-wrap p-4 lg:p-0 text-gray-700">
+                    <div className="flex flex-row items-center gap-4 mt-10 lg:mt-0">
+                        <div className="bg-secondary h-12 w-12 rounded-full flex justify-center items-center">
+                            <FontAwesomeIcon icon={faEnvelope} size="lg" color="white" />
+                        </div>
+                        <p className="text-lg lg:text-2xl font-semibold text-center lg:py-12">info.distrisuper@gmail.com</p>
                     </div>
-                    <p className="text-lg lg:text-2xl font-semibold text-center lg:py-12">0810-666-4500</p>
+                    <div className="flex flex-row items-center gap-4 mt-4 lg:mb-0 lg:mt-0">
+                        <div className="bg-secondary h-12 w-12 rounded-full flex justify-center items-center">
+                            <FontAwesomeIcon icon={faPhone} size="lg" color="white" />
+                        </div>
+                        <p className="text-lg lg:text-2xl font-semibold text-center lg:py-12">0810-666-4500</p>
+                    </div>
                 </div>
-            </div>
-            <div className="w-full flex flex-col lg:flex-row lg:gap-36 gap-5 justify-center items-center p-8 lg:p-0">
-                <form className="w-full md:w-1/2 lg:w-1/3 space-y-4">
-                    <FormInput type="text" placeholder="Nombre y apellido" />
-                    <FormInput type="email" placeholder="Email" />
-                    <FormInput type="text" placeholder="Teléfono (opcional)" />
-                    <div>
-                        <label className='font-semibold'>Mensaje</label>
-                        <textarea
-                            className="w-full p-2 border border-gray-300 rounded mt-1 outline-secondary"
-                        ></textarea>
-                    </div>
-                    <div className="w-full md:w-1/2">
-                        <button className="bg-secondary hover:scale-105 transition-transform text-white p-2 px-16 font-bold shadow-md rounded active:bg-sky-500">Enviar</button>
-                    </div>
-                </form>
-                <div className="h-64 w-64 lg:h-96 lg:w-96 object-cover rounded-lg flex items-center justify-center">
-                    <img width="100%" height="auto" src="/rodamiento.png" />
+                <div className="w-full flex flex-col lg:flex-row lg:gap-36 gap-5 justify-center items-center p-8 lg:p-0">
+
+
                 </div>
-            </div>
-            <div className="flex flex-col items-center">
-                <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-20 w-full mb-8 mt-16 md:mt-24">
-                    <h1 className="text-xl md:text-5xl font-bold text-gray-700">Encontranos en: </h1>
-                    <div className="relative inline-block">
-                        <select
-                            className="focus:bg-white bg-gray-100/70 py-3 px-16 border border-secondary text-secondary rounded outline-secondary appearance-none"
-                            onChange={handleSucursalChange}
-                        >
-                            {sucursales.map((sucursal) => (
-                                <option key={sucursal.name} value={sucursal.name}>
-                                    {sucursal.name}
-                                </option>
-                            ))}
-                        </select>
-                        <div className="absolute inset-y-0 right-2 md:right-6 flex items-center px-2 pointer-events-none">
-                            <FontAwesomeIcon icon={faChevronDown} className="text-secondary" />
+                <div className="flex flex-col items-center">
+                    <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-20 w-full mb-8 mt-16 md:mt-24">
+                        <h1 className="text-xl md:text-5xl font-bold text-gray-700">Encontranos en: </h1>
+                        <div className="relative inline-block">
+                            <select
+                                className="focus:bg-white bg-gray-100/70 py-3 px-16 border border-secondary text-secondary rounded outline-secondary appearance-none"
+                                onChange={handleSucursalChange}
+                            >
+                                {sucursales.map((sucursal) => (
+                                    <option key={sucursal.name} value={sucursal.name}>
+                                        {sucursal.name}
+                                    </option>
+                                ))}
+                            </select>
+                            <div className="absolute inset-y-0 right-2 md:right-6 flex items-center px-2 pointer-events-none">
+                                <FontAwesomeIcon icon={faChevronDown} className="text-secondary" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="w-full h-96">
-                    <iframe
-                        src={selectedSucursal}
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        allowFullScreen=""
-                        loading="lazy"
-                    ></iframe>
+                    <div className="w-full h-96">
+                        <iframe
+                            src={selectedSucursal}
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen=""
+                            loading="lazy"
+                        ></iframe>
+                    </div>
                 </div>
             </div>
         </section>
