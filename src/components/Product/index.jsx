@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faCircle, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Tooltip } from 'react-tooltip';
 import BrandCarousel from "../BrandCarousel"
 import "./styles.css";
 
 export default function Product() {
     const categories = [
-        "SUSPENSIÓN",
-        "DIRECCIÓN",
-        "FRENO",
-        "LÍQUIDOS",
-        "ENCENDIDO",
-        "TRANSMISIÓN",
-        "AGROINDUSTRIA",
-        "COMPLEMENTARIOS"
+        "Suspensión",
+        "Direc-ción",
+        "Fre-no",
+        "Lí-qui-dos",
+        "Encen-dido",
+        "Transmisión",
+        "Agroin-dustria",
+        "Comple-menta-rios"
     ];
 
     const details = {
@@ -30,12 +30,21 @@ export default function Product() {
                 "Barras de Torsión"
             ],
             "marcas": [
-                "/marcas/PEER.jpg",
-                "/marcas/apicer.png",
-                "/marcas/ENERBAT.jpg",
-                "/marcas/MAHLE.jpg",
-                "/marcas/nakata.png",
-                "/marcas/thompson.png",]
+                "/logosblancos/skf.png",
+                "/logosblancos/fric rot.png",
+                "/logosblancos/mon.png",
+                "/logosblancos/mon matic.png",
+                "/logosblancos/spicer.png",
+                "/logosblancos/thomp.png",
+                "/logosblancos/nakata.png",
+                "/logosblancos/mahle.png",
+                "/logosblancos/enerbat.png",
+                "/logosblancos/peer.png",
+                "/logosblancos/ag.png",
+
+            ],
+
+            "fondo": "/fondo-suspension.svg"
         },
         "LÍQUIDOS": {
             "productos": [
@@ -46,12 +55,12 @@ export default function Product() {
                 "Líquido de Freno"
             ],
             "marcas": [
-                "/marcas/PEER.jpg",
-                "/marcas/apicer.png",
-                "/marcas/ENERBAT.jpg",
-                "/marcas/MAHLE.jpg",
-                "/marcas/nakata.png",
-                "/marcas/thompson.png",]
+                "/logosblancos/PEER.png",
+                "/logosblancos/apicer.png",
+                "/logosblancos/ENERBAT.png",
+                "/logosblancos/MAHLE.png",
+                "/logosblancos/nakata.png",
+                "/logosblancos/thompson.png",]
         },
         "DIRECCIÓN": {
             "productos": [
@@ -60,12 +69,12 @@ export default function Product() {
                 "Cremalleras"
             ],
             "marcas": [
-                "/marcas/PEER.jpg",
-                "/marcas/apicer.png",
-                "/marcas/ENERBAT.jpg",
-                "/marcas/MAHLE.jpg",
-                "/marcas/nakata.png",
-                "/marcas/thompson.png",]
+                "/logosblancos/PEER.png",
+                "/logosblancos/apicer.png",
+                "/logosblancos/ENERBAT.png",
+                "/logosblancos/MAHLE.png",
+                "/logosblancos/nakata.png",
+                "/logosblancos/thompson.png",]
         },
         "FRENO": {
             "productos": [
@@ -107,7 +116,6 @@ export default function Product() {
             "marcas": []
         }
     };
-
     const [expandedCard, setExpandedCard] = useState(null);
 
     const handleCardClick = (index) => {
@@ -120,7 +128,8 @@ export default function Product() {
     };
 
     const getCategoryDetails = (categoryName) => {
-        return details[categoryName] || { productos: [] };
+        const normalizedCategoryName = categoryName.replace(/-/g, '').toUpperCase();
+        return details[normalizedCategoryName] || { productos: [] };
     };
 
     return (
@@ -129,42 +138,64 @@ export default function Product() {
                 <h1 className="2xl:text-6xl 2xl:leading-relaxed md:text-5xl text-3xl text-center leading-relaxed md:leading-relaxed mt-16 fade-text text-primary">
                     Nos especializamos en <strong>Tren Delantero</strong>
                 </h1>
-                <div className="w-10/12 h-[70vh]">
+                <div className="w-11/12 h-[75vh]">
                     <div className="parent h-full pb-16">
                         {categories.map((category, index) => (
                             <div
                                 key={index}
-                                className={`div${index + 1} cursor-pointer text-gray-700 ${expandedCard === index ? 'expanded shadow ' : 'hover:bg-secondary hover:text-white transition-all hover:drop-shadow-xl hover:-translate-y-3 duration-300'}`}
+                                style={{ backgroundImage: expandedCard === index ? `url(${getCategoryDetails(category)?.fondo})` : '' }}
+                                className={`div${index + 1} cursor-pointer text-white ${expandedCard === index ? 'expanded shadow' : 'hover:bg-secondary hover:text-white transition-all hover:drop-shadow-xl hover:-translate-y-3 duration-300'} ${expandedCard !== index && expandedCard !== null ? 'opacity-0' : ''}`}
                                 onClick={() => handleCardClick(index)}
                             >
                                 {expandedCard === index ?
                                     <>
-                                        <div className="h-full w-full flex flex-col items-center relative">
+                                        <div className="h-full w-full flex flex-col 2xl:py-10 relative px-36 justify-center">
+
                                             <button
                                                 onClick={handleCloseClick}
-                                                className="absolute top-4 right-4 bg-gray-400 hover:bg-red-400 transition-colors h-10 w-10 flex justify-center items-center rounded-full"
+                                                className="absolute top-4 right-4 border text-white/60 hover:text-white border-white/60 hover:bg-red-400 hover:border-red-400 transition-colors 2xl:h-10 2xl:w-10 h-8 w-8 flex justify-center items-center rounded-full"
                                                 data-tooltip-id="tooltip-cerrar" data-tooltip-content="Cerrar"
                                             >
-                                                <FontAwesomeIcon icon={faTimes} size="lg" color="white" />
+                                                <FontAwesomeIcon icon={faTimes} />
                                             </button>
                                             <Tooltip place="bottom" type="dark" effect="solid" id="tooltip-cerrar" />
-                                            <h3 className="mt-8 text-lg lg:text-4xl font-extrabold break-all text-center">{category}</h3>
+                                            <Tooltip place="bottom" type="dark" effect="solid" id="tooltip-anterior" />
+                                            <Tooltip place="bottom" type="dark" effect="solid" id="tooltip-siguiente" />
+
+
+                                            <button
+                                                onClick={handleCloseClick}
+                                                className="absolute top-1/2 -translate-y-1/2 left-4 border text-white/60 hover:text-white border-white/60 hover:border-white transition-colors 2xl:h-16 2xl:w-16 h-12 w-12 flex justify-center items-center rounded-full"
+                                                data-tooltip-id="tooltip-anterior" data-tooltip-content="Anterior"
+                                            >
+                                                <FontAwesomeIcon icon={faChevronLeft} size="lg" />
+                                            </button>
+
+                                            <button
+                                                onClick={handleCloseClick}
+                                                className="absolute top-1/2 -translate-y-1/2 right-4 border text-white/60 hover:text-white border-white/60 hover:border-white transition-colors 2xl:h-16 2xl:w-16 h-12 w-12 flex justify-center items-center rounded-full"
+                                                data-tooltip-id="tooltip-siguiente" data-tooltip-content="Siguiente"
+                                            >
+                                                <FontAwesomeIcon icon={faChevronRight} size="lg" />
+                                            </button>
+
+                                            <h3 className="mt-8 text-lg lg:text-6xl 2xl:text-7xl font-extrabold self-start" dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '') }} />
                                             {getCategoryDetails(category)?.productos.length > 0 ?
-                                                <div className="flex flex-row w-full mt-2">
-                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-3/4 mt-4">
+                                                <div className="flex flex-col w-full mt-2">
+                                                    <div className="grid grid-cols-1 sm:grid-cols-2 w-3/4 mt-4">
                                                         {
                                                             getCategoryDetails(category)?.productos?.map((producto, idx) => (
-                                                                <p key={idx} className="p-2  rounded-md text-center flex items-center gap-5">
-                                                                    <FontAwesomeIcon icon={faCircle} className="text-secondary" /> {producto}
+                                                                <p key={idx} className="p-1 rounded-md text-center flex items-center gap-5 text-lg 2xl:text-2xl">
+                                                                    <FontAwesomeIcon icon={faCircle} className="text-secondary" size="sm" /> {producto}
                                                                 </p>
                                                             ))
                                                         }
                                                     </div>
 
-                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-1/4 mt-4">
+                                                    <div className="flex flex-row justify-between mt-8">
                                                         {getCategoryDetails(category).marcas?.map((img, idx) => (
-                                                            <div className="w-12 h-12">
-                                                                <img key={idx} src={img} alt={`Image ${idx + 1}`} className="w-full h-auto object-cover" />
+                                                            <div className="w-14 h-14 2xl:w-20 2xl:h-20" key={idx}>
+                                                                <img src={img} alt={`Image ${idx + 1}`} className="w-full h-auto object-cover" />
                                                             </div>
                                                         ))}
                                                     </div>
@@ -175,13 +206,13 @@ export default function Product() {
                                         </div>
                                     </>
                                     :
-                                    <p className="text-lg lg:text-4xl font-extrabold break-all text-center">{category}</p>
+                                    <p className="text-lg lg:text-5xl font-extrabold text-center" dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '<wbr />').toUpperCase() }} />
                                 }
                             </div>
                         ))}
                     </div>
                 </div>
-            </section >
+            </section>
             <BrandCarousel />
         </>
     );

@@ -39,7 +39,7 @@ export default function Contact() {
                     <p className="text-lg lg:text-2xl font-semibold text-center lg:py-12">0810-666-4500</p>
                 </div>
             </div>
-            <div className="w-full flex flex-col lg:flex-row lg:gap-20 gap-5 justify-center items-center p-8 lg:p-0">
+            <div className="w-full flex flex-col lg:flex-row lg:gap-36 gap-5 justify-center items-center p-8 lg:p-0">
                 <form className="w-full md:w-1/2 lg:w-1/3 space-y-4">
                     <FormInput type="text" placeholder="Nombre y apellido" />
                     <FormInput type="email" placeholder="Email" />
@@ -51,11 +51,11 @@ export default function Contact() {
                         ></textarea>
                     </div>
                     <div className="w-full md:w-1/2">
-
+                        <button className="bg-secondary hover:scale-105 transition-transform text-white p-2 px-16 font-bold shadow-md rounded active:bg-sky-500">Enviar</button>
                     </div>
                 </form>
-                <div className="h-64 w-64 lg:h-96 lg:w-96 bg-gray-300 rounded-lg flex items-center justify-center">
-                    Imagen
+                <div className="h-64 w-64 lg:h-96 lg:w-96 object-cover rounded-lg flex items-center justify-center">
+                    <img width="100%" height="auto" src="/rodamiento.png" />
                 </div>
             </div>
             <div className="flex flex-col items-center">
