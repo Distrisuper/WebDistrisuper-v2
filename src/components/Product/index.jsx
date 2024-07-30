@@ -37,11 +37,8 @@ export default function Product() {
                 "/logosblancos/spicer.png",
                 "/logosblancos/thomp.png",
                 "/logosblancos/nakata.png",
-                "/logosblancos/mahle.png",
                 "/logosblancos/enerbat.png",
-                "/logosblancos/peer.png",
                 "/logosblancos/ag.png",
-
             ],
 
             "fondo": "/fondos/fondo-suspension.svg"
@@ -55,12 +52,10 @@ export default function Product() {
                 "Líquido de Freno"
             ],
             "marcas": [
-                "/logosblancos/PEER.png",
-                "/logosblancos/apicer.png",
-                "/logosblancos/ENERBAT.png",
-                "/logosblancos/MAHLE.png",
-                "/logosblancos/nakata.png",
-                "/logosblancos/thompson.png",],
+                "/logosblancos/valvoline.png",
+                "/logosblancos/wildbrake.png",
+                "/logosblancos/slime.png",
+            ],
             "fondo": "/fondos/fondo-liquidos.svg"
         },
         "DIRECCIÓN": {
@@ -70,12 +65,12 @@ export default function Product() {
                 "Cremalleras"
             ],
             "marcas": [
-                "/logosblancos/PEER.png",
-                "/logosblancos/apicer.png",
-                "/logosblancos/ENERBAT.png",
-                "/logosblancos/MAHLE.png",
-                "/logosblancos/nakata.png",
-                "/logosblancos/thompson.png",],
+                "/logosblancos/thomp.png",
+                "/logosblancos/mon.png",
+                "/logosblancos/under.png",
+                "/logosblancos/cesca.png",
+                "/logosblancos/apex.png",
+            ],
 
             "fondo": "/fondos/fondo-direccion.svg"
         },
@@ -89,7 +84,7 @@ export default function Product() {
                 "Flexibles",
                 "Depresores"
             ],
-            "marcas": [],
+            "marcas": ["/logosblancos/wildbrake.png", "/logosblancos/raybestos.png", "/logosblancos/champion.png", "/logosblancos/wag.png", "/logosblancos/rm.png",],
 
             "fondo": "/fondos/fondo-freno.svg"
         },
@@ -104,7 +99,7 @@ export default function Product() {
                 "Fuelles y Topes",
                 "Rodamientos"
             ],
-            "marcas": [],
+            "marcas": ["/logosblancos/skf.png", "/logosblancos/spicer.png", "/logosblancos/nakata.png", "/logosblancos/under.png", "/logosblancos/garma.png", "/logosblancos/dauer.png", "/logosblancos/etma.png", "/logosblancos/vth.png", "/logosblancos/griffo.png", "/logosblancos/axios.png",],
 
             "fondo": "/fondos/fondo-transmision.svg"
         },
@@ -112,7 +107,7 @@ export default function Product() {
             "productos": [
                 "Bujías"
             ],
-            "marcas": [],
+            "marcas": ["/logosblancos/champion.png"],
 
             "fondo": "/fondos/fondo-encendido.svg"
         },
@@ -130,7 +125,7 @@ export default function Product() {
                 "Soportes",
                 "Resortes de Portón"
             ],
-            "marcas": [],
+            "marcas": ["/logosblancos/solmmi.png", "/logosblancos/vth.png", "/logosblancos/axios.png", "/logosblancos/hiterub.png", "/logosblancos/gaspring.png",],
 
             "fondo": "/fondos/fondo-suspension.svg"
         }
@@ -225,7 +220,7 @@ export default function Product() {
                                                         }
                                                     </div>
 
-                                                    <div className="flex flex-row justify-between mt-8">
+                                                    <div className="flex flex-row gap-10 mt-8">
                                                         {getCategoryDetails(category).marcas?.map((img, idx) => (
                                                             <div className="w-14 h-14 2xl:w-20 2xl:h-20" key={idx}>
                                                                 <img src={img} alt={`Image ${idx + 1}`} className="w-full h-auto object-cover" />

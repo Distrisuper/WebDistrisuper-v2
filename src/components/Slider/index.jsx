@@ -3,59 +3,59 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import './styles.css'
-import peer from '/marcas/PEER.jpg';
-import apicer from '/marcas/apicer.png';
-import enerbat from '/marcas/ENERBAT.jpg';
-import mahle from '/marcas/MAHLE.jpg';
-import nakata from '/marcas/nakata.png';
-import thompson from '/marcas/thompson.png';
-import monroeNegro from '/marcas/monroe negro.png';
-import etma from '/marcas/etma.png';
-import wag from '/marcas/wag.png';
-import champion from '/marcas/champion.png';
-import fricRot from '/marcas/fric rot.png';
-import monroe from '/marcas/monroe.png';
-import raybestos from '/marcas/raybestos.png';
-import valeo from '/marcas/valeo.png';
-import moog from '/marcas/MOOG.jpg';
-import ag from '/marcas/ag.png';
-import cobreq from '/marcas/cobreq.png';
-import liggett from '/marcas/LIGGETT.jpg';
-import mrs from '/marcas/MRS.jpg';
-import skf from '/marcas/skf.png';
-import wildbrake from '/marcas/wildbrake.png';
-
 
 export default function Slider() {
 
     const slides = [
-        { id: 'slide2', src: peer },
-        { id: 'slide3', src: apicer },
-        { id: 'slide4', src: enerbat },
-        { id: 'slide5', src: mahle },
-        { id: 'slide6', src: nakata },
-        { id: 'slide7', src: thompson },
-        { id: 'slide8', src: monroeNegro },
-        { id: 'slide9', src: etma },
-        { id: 'slide10', src: wag },
-        { id: 'slide11', src: champion },
-        { id: 'slide12', src: fricRot },
-        { id: 'slide13', src: monroe },
-        { id: 'slide14', src: raybestos },
-        { id: 'slide15', src: valeo },
-        { id: 'slide16', src: moog },
-        { id: 'slide17', src: ag },
-        { id: 'slide18', src: cobreq },
-        { id: 'slide19', src: liggett },
-        { id: 'slide20', src: mrs },
-        { id: 'slide21', src: skf },
-        { id: 'slide22', src: wildbrake }
+        { id: 'slide1', src: '/logosblancos/ag.png' },
+        { id: 'slide2', src: '/logosblancos/apex.png' },
+        { id: 'slide3', src: '/logosblancos/axios.png' },
+        { id: 'slide4', src: '/logosblancos/bator.png' },
+        { id: 'slide5', src: '/logosblancos/cesca.png' },
+        { id: 'slide6', src: '/logosblancos/champion.png' },
+        { id: 'slide7', src: '/logosblancos/clever.png' },
+        { id: 'slide8', src: '/logosblancos/cobrec.png' },
+        { id: 'slide9', src: '/logosblancos/dauer.png' },
+        { id: 'slide10', src: '/logosblancos/enerbat.png' },
+        { id: 'slide11', src: '/logosblancos/etma.png' },
+        { id: 'slide12', src: '/logosblancos/fric rot.png' },
+        { id: 'slide13', src: '/logosblancos/garma.png' },
+        { id: 'slide14', src: '/logosblancos/gaspring.png' },
+        { id: 'slide15', src: '/logosblancos/griffo.png' },
+        { id: 'slide16', src: '/logosblancos/hiterub.png' },
+        { id: 'slide17', src: '/logosblancos/jorsa.png' },
+        { id: 'slide18', src: '/logosblancos/logo_serma.png' },
+        { id: 'slide19', src: '/logosblancos/mon amort.png' },
+        { id: 'slide20', src: '/logosblancos/mon matic.png' },
+        { id: 'slide21', src: '/logosblancos/mon.png' },
+        { id: 'slide22', src: '/logosblancos/moog.png' },
+        { id: 'slide23', src: '/logosblancos/mrs.png' },
+        { id: 'slide24', src: '/logosblancos/nakata.png' },
+        { id: 'slide25', src: '/logosblancos/ostende.png' },
+        { id: 'slide26', src: '/logosblancos/rancho.png' },
+        { id: 'slide27', src: '/logosblancos/raybestos.png' },
+        { id: 'slide28', src: '/logosblancos/rm.png' },
+        { id: 'slide29', src: '/logosblancos/serrat.png' },
+        { id: 'slide30', src: '/logosblancos/silisol.png' },
+        { id: 'slide31', src: '/logosblancos/skf.png' },
+        { id: 'slide32', src: '/logosblancos/slime.png' },
+        { id: 'slide33', src: '/logosblancos/solmimi.png' },
+        { id: 'slide34', src: '/logosblancos/spicer.png' },
+        { id: 'slide35', src: '/logosblancos/textar.png' },
+        { id: 'slide36', src: '/logosblancos/thomp.png' },
+        { id: 'slide37', src: '/logosblancos/under.png' },
+        { id: 'slide38', src: '/logosblancos/VALEO.png' },
+        { id: 'slide39', src: '/logosblancos/valvoline.png' },
+        { id: 'slide40', src: '/logosblancos/vth.png' },
+        { id: 'slide41', src: '/logosblancos/wag.png' },
+        { id: 'slide42', src: '/logosblancos/wildbrake.png' },
     ];
+
 
     return (
         <Swiper
             autoplay={{
-                delay: 4000,
+                delay: 3000,
                 disableOnInteraction: false,
             }}
             modules={[Autoplay]}
