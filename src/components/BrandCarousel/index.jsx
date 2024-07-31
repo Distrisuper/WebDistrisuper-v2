@@ -10,7 +10,6 @@ const BrandCarousel = () => {
 
     return (
         <section id='marcas' className='bg-base pb-10'>
-            <h2 className='text-center py-8 text-2xl md:text-4xl text-gray-700 font-semibold'>Marcas</h2>
             <div className="marquee mb-16">
                 <div className="flex items-center animate-scroll grayscale hover:grayscale-0 transition-all cursor-pointer ">
                     {brands.map((brand, index) => (

@@ -2,7 +2,7 @@ import React from "react";
 import Timeline from "../Timeline";
 import vision from "/vision.png";
 import mision from "/mision.png";
-
+import fondo from "/fondos/fondo-about.svg"
 
 export default function About() {
     const data = [
@@ -34,16 +34,18 @@ export default function About() {
 
 
     return (
-        <section id="nosotros">
+        <section id="nosotros" >
 
             <div>
-                <h3 className="text-5xl font-semibold text-center md:py-24 pt-20 pb-10 text-gray-700">Nuestra historia</h3>
-                <div className="relative h-auto mb-8 w-full">
+                <h3 className="text-5xl font-semibold text-center md:pt-24 md:pb-16  pt-20 pb-10 text-gray-700">Nuestra historia</h3>
+                <div className="relative h-auto mb-16 w-full">
                     <Timeline data={data} />
                 </div>
-                <div className="flex flex-col gap-10 lg:flex-row lg:gap-20 px-6 my-24">
-                    <div className="max-w-sm mx-auto bg-white border rounded-lg overflow-hidden border-b-4 border-b-secondary flex flex-col px-6  items-center justify-between py-10">
-                        <img src={vision} width={100} />
+                <div style={{ backgroundImage: `url(${fondo})` }} className="flex flex-col gap-10 lg:flex-row lg:gap-20 px-6 py-24 bg-cover">
+                    <div className="max-w-sm mx-auto bg-white/80 border rounded-lg overflow-hidden border-b-4 border-b-secondary flex flex-col px-6 items-center py-10 gap-4">
+                        <div className="w-24 h-24 flex justify-center items-center">
+                            <img src={vision} className="w-full h-auto object-cover" />
+                        </div>
                         <div>
                             <h2 className="text-gray-700 font-bold text-2xl mb-2 text-center">Nuestra visión</h2>
                             <p className="text-gray-600 text-center">
@@ -53,8 +55,10 @@ export default function About() {
                         </div>
 
                     </div>
-                    <div className="max-w-sm mx-auto bg-white border rounded-lg overflow-hidden border-b-4 border-b-secondary flex flex-col px-6  items-center justify-between py-10">
-                        <img src={mision} width={100} />
+                    <div className="max-w-sm mx-auto bg-white/80 border rounded-lg overflow-hidden border-b-4 border-b-secondary flex flex-col px-6  items-center py-10 gap-4">
+                        <div className="w-24 h-24 flex justify-center items-center">
+                            <img src={mision} className="w-full h-auto object-cover" />
+                        </div>
                         <div>
                             <h2 className="text-gray-700 font-bold text-2xl mb-2 text-center">Nuestra misión</h2>
                             <p className="text-gray-600 text-center">

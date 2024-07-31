@@ -7,6 +7,8 @@ import logoBlanco from '/logo-blanco.webp';
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const [showHeader, setShowHeader] = useState(true);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -14,11 +16,17 @@ export default function Header() {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 100) {
-                setIsScrolled(true);
+            const currentScrollY = window.scrollY;
+            setIsScrolled(currentScrollY > 100);
+
+            if (currentScrollY > lastScrollY) {
+                // Scrolling down
+                setShowHeader(false);
             } else {
-                setIsScrolled(false);
+                // Scrolling up
+                setShowHeader(true);
             }
+            setLastScrollY(currentScrollY);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -26,10 +34,10 @@ export default function Header() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [lastScrollY]);
 
     return (
-        <header className={`p-4 fixed w-full z-[999] transition-all duration-300 ${isScrolled ? 'bg-white text-gray-800' : 'bg-transparent text-white'} ${isScrolled ? '-translate-y-0' : 'translate-y-0'}`}>
+        <header className={`p-4 fixed w-full z-[999] transition-all duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'} ${isScrolled ? 'bg-white text-gray-800' : 'bg-transparent text-white'}`}>
             <div className="flex justify-between items-center">
                 <div>
                     <a href="#"><img src={isScrolled ? logo : logoBlanco} className="w-52 lg:ml-20" alt="Logo" /></a>

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faCircle, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Tooltip } from 'react-tooltip';
 import BrandCarousel from "../BrandCarousel"
+import { useInView } from 'react-intersection-observer';
 import "./styles.css";
 
 export default function Product() {
@@ -46,7 +47,7 @@ export default function Product() {
         "LÍQUIDOS": {
             "productos": [
                 "Lubricantes",
-                "Líquidos Refrigerantes y Anticongelantes",
+                "Refrigerantes y Anticongelantes",
                 "Aditivos",
                 "Antipinchaduras y Compresores",
                 "Líquido de Freno"
@@ -131,7 +132,7 @@ export default function Product() {
         }
     };
     const [expandedCard, setExpandedCard] = useState(null);
-
+    const { ref, inView } = useInView({ triggerOnce: true });
     const handleCardClick = (index) => {
         setExpandedCard(index);
     };
@@ -160,24 +161,26 @@ export default function Product() {
         return details[normalizedCategoryName] || { productos: [] };
     };
 
+
+
     return (
         <>
-            <section id="productos" className="bg-base h-auto flex flex-col gap-10 justify-center items-center w-full">
-                <h1 className="2xl:text-6xl 2xl:leading-relaxed md:text-5xl text-3xl text-center leading-relaxed md:leading-relaxed mt-16 fade-text text-primary">
+            <section ref={ref} id="productos" className={`bg-base h-auto flex flex-col gap-10 justify-center items-center w-full  ${inView ? 'fade-text' : ''}`}>
+                <h1 className={`2xl:text-6xl 2xl:leading-relaxed md:text-5xl text-3xl text-center leading-relaxed md:leading-relaxed mt-16   text-primary`}>
                     Nos especializamos en <strong>Tren Delantero</strong>
                 </h1>
                 <div className="w-11/12 h-[90vh] md:h-[75vh]">
-                    <div className="parent h-full pb-16">
+                    <div className={`parent h-full pb-16`}>
                         {categories.map((category, index) => (
                             <div
                                 key={index}
                                 style={{ backgroundImage: expandedCard === index ? `url(${getCategoryDetails(category)?.fondo})` : '' }}
-                                className={`div${index + 1} cursor-pointer text-gray-700 ${expandedCard === index ? 'expanded shadow' : 'hover:bg-secondary hover:text-white transition-colors hover:drop-shadow duration-300'} ${expandedCard !== index && expandedCard !== null ? 'opacity-0' : ''}`}
+                                className={`div${index + 1} cursor-pointer text-gray-700 ${expandedCard === index ? 'expanded shadow' : 'hover:bg-secondary hover:text-white transition-colors hover:drop-shadow duration-300'}`}
                                 onClick={() => handleCardClick(index)}
                             >
                                 {expandedCard === index ?
                                     <>
-                                        <div className="h-full w-full text-white flex flex-col 2xl:py-10 relative  md:px-36 ">
+                                        <div className="h-full w-full text-white flex flex-col 2xl:py-10 relative md:px-36 justify-center ">
 
                                             <button
                                                 onClick={handleCloseClick}
@@ -220,10 +223,10 @@ export default function Product() {
                                                         }
                                                     </div>
 
-                                                    <div className="grid grid-cols-4 gap-x-6 gap-y-4 md:flex md:flex-row md:gap-10 md:mt-8 mt-16">
+                                                    <div className="grid grid-cols-4 gap-x-6 gap-y-4 md:flex md:flex-row md:gap-10 md:mt-8 mt-16 md:items-center">
                                                         {getCategoryDetails(category).marcas?.map((img, idx) => (
-                                                            <div className="w-12 h-12 2xl:w-20 2xl:h-20" key={idx}>
-                                                                <img src={img} alt={`Image ${idx + 1}`} className="w-full h-auto object-cover" loading="lazy" />
+                                                            <div className="w-14 h-14 2xl:w-20 2xl:h-20 flex justify-center items-center" key={idx}>
+                                                                <img src={img} alt={`Image ${idx + 1}`} className="w-auto h-auto object-cover" loading="lazy" />
                                                             </div>
                                                         ))}
                                                     </div>

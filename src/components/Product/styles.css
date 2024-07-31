@@ -76,16 +76,18 @@
 
 /* Animación para desvanecer texto */
 .fade-text {
-    animation: fadeInOut 1s ease;
+    animation: fadeInOut 1.5s ease;
 }
 
 @keyframes fadeInOut {
     from {
         opacity: 0;
+        transform: translateX(100px);
     }
 
     to {
         opacity: 1;
+        transform: translateX(0);
     }
 }
 
@@ -148,4 +150,20 @@
         height: 100% !important;
         z-index: 10;
     }
+}
+
+@keyframes slideCards {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.custom-animation {
+    animation: slideCards 1s ease;
 }

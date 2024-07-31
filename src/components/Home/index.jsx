@@ -29,7 +29,7 @@ export default function Home() {
                         {inView && (
                             <>
                                 <span className="text-3xl 2xl:text-8xl md:text-7xl font-extrabold text-white">
-                                    <CountUp end={40} duration={2} prefix="+" />
+                                    <CountUp end={40} duration={3.5} prefix="+" />
                                 </span>
                                 <span className="text-white mt-2 text-lg lg:text-xl">Años de Experiencia</span>
                             </>
@@ -39,7 +39,7 @@ export default function Home() {
                         {inView && (
                             <>
                                 <span className="text-3xl 2xl:text-8xl md:text-7xl font-extrabold text-white">
-                                    <CountUp end={400} duration={2} prefix="+" />
+                                    <CountUp end={400} duration={3.5} prefix="+" />
                                 </span>
                                 <span className="text-white mt-2 text-lg lg:text-xl text-center text-balance">Pedidos Entregados por día</span>
                             </>
@@ -49,7 +49,7 @@ export default function Home() {
                         {inView && (
                             <>
                                 <span className="text-3xl 2xl:text-8xl md:text-7xl font-extrabold text-white">
-                                    <CountUp end={4000} duration={2} prefix="+" />
+                                    <CountUp end={4000} duration={3.5} prefix="+" />
                                 </span>
                                 <span className="text-white mt-2 text-lg lg:text-xl">Localidades Alcanzadas</span>
                             </>
