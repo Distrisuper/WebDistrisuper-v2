@@ -8,7 +8,7 @@ export default function Home() {
     const [ref, inView] = useInView({ triggerOnce: true });
     return (
         <>
-            <div style={{ backgroundImage: `url(/fondo-home.svg)` }} className="h-screen flex flex-col lg:flex-row items-center lg:justify-between px-8 lg:p-24 bg-cover">
+            <div style={{ backgroundImage: `url(/fondo-home.svg)` }} className="h-screen flex flex-col lg:flex-row gap-10 lg:gap-0 items-center lg:justify-between px-8 lg:p-24 bg-cover">
                 <div className="w-full lg:w-1/2">
                     <h1 className="text-white text-3xl lg:text-5xl leading-snug lg:leading-snug 2xl:leading-snug mt-24 lg:mt-0">
                         Somos <strong>mayorista</strong> de <strong>autopartes</strong> orientados a <strong>casas de repuestos automotor, agro e industria</strong>
@@ -18,7 +18,7 @@ export default function Home() {
                     <Slider />
                 </div>
             </div>
-            <div className="flex flex-col justify-center items-center p-8 lg:p-16">
+            <div className="flex flex-col justify-center items-center p-6 lg:p-16">
                 <span className="w-full flex items-center justify-center my-3">
                     <h2 className="text-primary text-xl lg:text-5xl leading-snug 2xl:leading-snug lg:leading-snug lg:text-center lg:px-16 text-balance">
                         Nos enfocamos fuertemente en el <strong>servicio</strong>, <strong>calidad</strong> y <strong>disponibilidad</strong> de nuestros productos y en la contínua <strong>innovación</strong>.

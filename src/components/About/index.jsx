@@ -8,7 +8,7 @@ export default function About() {
     const data = [
         {
             "year": 1976,
-            "text": "Nace Distrisuper como emprendimiento familiar formado por: xxxxxxxx con el apoyo de Fric Rot para comercializar su línea de amortiguadores Supershock."
+            "text": "Nace Distrisuper como emprendimiento familiar formado por José O. Mónaco, José Montes, Carlos J. Pérez y Gerardo N. Montes con el apoyo de Fric Rot para comercializar su línea de amortiguadores Supershock."
         },
         {
             "year": 1998,

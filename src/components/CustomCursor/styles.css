@@ -1,0 +1,32 @@
+/* Cursor.css */
+body {
+    cursor: none;
+    /* Oculta el cursor original del navegador */
+}
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    border: 2px solid #022C66;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: #022C66;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease;
+}

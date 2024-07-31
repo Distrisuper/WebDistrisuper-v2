@@ -56,7 +56,7 @@ export default function Product() {
                 "/logosblancos/wildbrake.png",
                 "/logosblancos/slime.png",
             ],
-            "fondo": "/fondos/fondo-liquidos.svg"
+            "fondo": "/fondos/fondo-liquidos.webp"
         },
         "DIRECCIÓN": {
             "productos": [
@@ -72,7 +72,7 @@ export default function Product() {
                 "/logosblancos/apex.png",
             ],
 
-            "fondo": "/fondos/fondo-direccion.svg"
+            "fondo": "/fondos/fondo-direccion.webp"
         },
         "FRENO": {
             "productos": [
@@ -86,7 +86,7 @@ export default function Product() {
             ],
             "marcas": ["/logosblancos/wildbrake.png", "/logosblancos/raybestos.png", "/logosblancos/champion.png", "/logosblancos/wag.png", "/logosblancos/rm.png",],
 
-            "fondo": "/fondos/fondo-freno.svg"
+            "fondo": "/fondos/fondo-freno.webp"
         },
         "TRANSMISIÓN": {
             "productos": [
@@ -101,7 +101,7 @@ export default function Product() {
             ],
             "marcas": ["/logosblancos/skf.png", "/logosblancos/spicer.png", "/logosblancos/nakata.png", "/logosblancos/under.png", "/logosblancos/garma.png", "/logosblancos/dauer.png", "/logosblancos/etma.png", "/logosblancos/vth.png", "/logosblancos/griffo.png", "/logosblancos/axios.png",],
 
-            "fondo": "/fondos/fondo-transmision.svg"
+            "fondo": "/fondos/fondo-transmision.webp"
         },
         "ENCENDIDO": {
             "productos": [
@@ -109,7 +109,7 @@ export default function Product() {
             ],
             "marcas": ["/logosblancos/champion.png"],
 
-            "fondo": "/fondos/fondo-encendido.svg"
+            "fondo": "/fondos/fondo-encendido.webp"
         },
         "AGROINDUSTRIA": {
             "productos": [
@@ -117,7 +117,7 @@ export default function Product() {
             ],
             "marcas": [],
 
-            "fondo": "/fondos/fondo-agroindustria.svg"
+            "fondo": "/fondos/fondo-agroindustria.webp"
         },
         "COMPLEMENTARIOS": {
             "productos": [
@@ -166,18 +166,18 @@ export default function Product() {
                 <h1 className="2xl:text-6xl 2xl:leading-relaxed md:text-5xl text-3xl text-center leading-relaxed md:leading-relaxed mt-16 fade-text text-primary">
                     Nos especializamos en <strong>Tren Delantero</strong>
                 </h1>
-                <div className="w-11/12 h-[75vh]">
+                <div className="w-11/12 h-[90vh] md:h-[75vh]">
                     <div className="parent h-full pb-16">
                         {categories.map((category, index) => (
                             <div
                                 key={index}
                                 style={{ backgroundImage: expandedCard === index ? `url(${getCategoryDetails(category)?.fondo})` : '' }}
-                                className={`div${index + 1} cursor-pointer text-gray-700 ${expandedCard === index ? 'expanded shadow' : 'hover:bg-secondary hover:text-white transition-colors hover:drop-shadow-xl hover:-translate-y-3 duration-300'} ${expandedCard !== index && expandedCard !== null ? 'opacity-0' : ''}`}
+                                className={`div${index + 1} cursor-pointer text-gray-700 ${expandedCard === index ? 'expanded shadow' : 'hover:bg-secondary hover:text-white transition-colors hover:drop-shadow duration-300'} ${expandedCard !== index && expandedCard !== null ? 'opacity-0' : ''}`}
                                 onClick={() => handleCardClick(index)}
                             >
                                 {expandedCard === index ?
                                     <>
-                                        <div className="h-full w-full text-white flex flex-col 2xl:py-10 relative px-36 justify-center">
+                                        <div className="h-full w-full text-white flex flex-col 2xl:py-10 relative  md:px-36 ">
 
                                             <button
                                                 onClick={handleCloseClick}
@@ -193,7 +193,7 @@ export default function Product() {
 
                                             <button
                                                 onClick={(e) => handleNavigationClick(e, -1)}
-                                                className="absolute top-1/2 -translate-y-1/2 left-4 border text-white/60 hover:text-white border-white/60 hover:border-white transition-colors 2xl:h-16 2xl:w-16 h-12 w-12 flex justify-center items-center rounded-full"
+                                                className="absolute top-1/2 -translate-y-1/2 left-2 md:left-4 border text-white/60 hover:text-white border-white/60 hover:border-white transition-colors 2xl:h-16 2xl:w-16 h-12 w-12 flex justify-center items-center rounded-full"
                                                 data-tooltip-id="tooltip-anterior" data-tooltip-content="Anterior"
                                             >
                                                 <FontAwesomeIcon icon={faChevronLeft} size="lg" />
@@ -201,29 +201,29 @@ export default function Product() {
 
                                             <button
                                                 onClick={(e) => handleNavigationClick(e, 1)}
-                                                className="absolute top-1/2 -translate-y-1/2 right-4 border text-white/60 hover:text-white border-white/60 hover:border-white transition-colors 2xl:h-16 2xl:w-16 h-12 w-12 flex justify-center items-center rounded-full"
+                                                className="absolute top-1/2 -translate-y-1/2 right-2 md:right-4 border text-white/60 hover:text-white border-white/60 hover:border-white transition-colors 2xl:h-16 2xl:w-16 h-12 w-12 flex justify-center items-center rounded-full"
                                                 data-tooltip-id="tooltip-siguiente" data-tooltip-content="Siguiente"
                                             >
                                                 <FontAwesomeIcon icon={faChevronRight} size="lg" />
                                             </button>
 
-                                            <h3 className="mt-8 text-lg lg:text-6xl 2xl:text-7xl font-extrabold self-start" dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '') }} />
+                                            <h3 className="mt-4 md:mt-8 text-3xl text-center lg:text-6xl 2xl:text-7xl font-extrabold md:self-start" dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '') }} />
                                             {getCategoryDetails(category)?.productos.length > 0 ?
-                                                <div className="flex flex-col w-full mt-2">
+                                                <div className="flex flex-col w-full mt-2 items-center md:items-start">
                                                     <div className="grid grid-cols-1 sm:grid-cols-2 mt-4">
                                                         {
                                                             getCategoryDetails(category)?.productos?.map((producto, idx) => (
-                                                                <p key={idx} className="p-1 rounded-md text-center flex items-center gap-5 text-lg 2xl:text-2xl">
+                                                                <p key={idx} className="p-1 rounded-md text-left md:text-center flex items-center gap-5  md:text-lg 2xl:text-2xl">
                                                                     <FontAwesomeIcon icon={faCircle} className="text-secondary" size="sm" /> {producto}
                                                                 </p>
                                                             ))
                                                         }
                                                     </div>
 
-                                                    <div className="flex flex-row gap-10 mt-8">
+                                                    <div className="grid grid-cols-4 gap-x-6 gap-y-4 md:flex md:flex-row md:gap-10 md:mt-8 mt-16">
                                                         {getCategoryDetails(category).marcas?.map((img, idx) => (
-                                                            <div className="w-14 h-14 2xl:w-20 2xl:h-20" key={idx}>
-                                                                <img src={img} alt={`Image ${idx + 1}`} className="w-full h-auto object-cover" />
+                                                            <div className="w-12 h-12 2xl:w-20 2xl:h-20" key={idx}>
+                                                                <img src={img} alt={`Image ${idx + 1}`} className="w-full h-auto object-cover" loading="lazy" />
                                                             </div>
                                                         ))}
                                                     </div>

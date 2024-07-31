@@ -22,13 +22,13 @@ export default function Contact() {
     return (
         <section id="contacto">
             <div className="bg-base flex flex-col items-center md:px-12 md:pt-16">
-                <div className="flex flex-row items-center">
-                    <div className="w-full md:w-2/5 rounded-lg flex items-start justify-start">
+                <div className="flex flex-col md:flex-row items-center">
+                    <div className="w-1/2 md:w-2/5 rounded-lg flex justify-center items-center md:items-start md:justify-start pt-10 md:pt-0">
                         <img width="50%" height="auto" src="/rodamiento.png" />
                     </div>
                     <div className="w-full md:w-3/5 flex flex-col gap-10">
-                        <h1 className="text-secondary text-left leading-snug text-4xl lg:text-7xl lg:leading-tight font-extrabold w-full ">Comunicate con nosotros</h1>
-                        <form className="w-full md:w-1/2 space-y-4 w">
+                        <h1 className="text-secondary text-center md:text-left leading-snug text-5xl lg:text-7xl lg:leading-tight font-extrabold w-full ">Comunicate con nosotros</h1>
+                        <form className="w-full md:w-1/2 space-y-4 px-8 md:px-0">
                             <FormInput type="text" placeholder="Nombre y Apellido" />
                             <FormInput type="email" placeholder="E-mail" />
                             <FormInput type="text" placeholder="Teléfono (opcional)" />
@@ -43,8 +43,6 @@ export default function Contact() {
                             </div>
                         </form>
                     </div>
-
-
                 </div>
 
 
@@ -67,8 +65,8 @@ export default function Contact() {
 
 
                 </div>
-                <div className="flex flex-col items-center">
-                    <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-20 w-full mb-8 mt-16 md:mt-24">
+                <div className="flex flex-col items-center w-full">
+                    <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-20 w-full mb-8 md:mt-24">
                         <h1 className="text-xl md:text-5xl font-bold text-gray-700">Encontranos en: </h1>
                         <div className="relative inline-block">
                             <select
@@ -86,7 +84,7 @@ export default function Contact() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full h-96">
+                    <div className="w-full h-96 md:h-[400px]">
                         <iframe
                             src={selectedSucursal}
                             width="100%"
