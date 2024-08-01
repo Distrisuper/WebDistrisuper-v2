@@ -49,7 +49,7 @@ export default function Header() {
                 </div>
                 <nav className={`lg:flex lg:items-center ${isOpen ? 'block' : 'hidden'} w-full lg:w-auto lg:mr-12`}>
                     <ul className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 text-center lg:text-left mt-4 lg:mt-0">
-                        <li><a href="/" className="hover:text-blue-500 transition-all">Inicio</a></li>
+                        <li><a href="#inicio" className="hover:text-blue-500 transition-all">Inicio</a></li>
                         <li><a href="#productos" className="hover:text-blue-500 transition-all">Productos</a></li>
                         <li><a href="#nosotros" className="hover:text-blue-500 transition-all">Nosotros</a></li>
                         <li><a href="#contacto" className="hover:text-blue-500 transition-all">Contacto</a></li>
@@ -66,7 +66,7 @@ export default function Header() {
                     </div>
                     <nav>
                         <ul className="flex flex-col space-y-4 text-gray-800 text-center mt-2 mb-6">
-                            <li><a href="/" className="hover:text-blue-500 transition-all">Inicio</a></li>
+                            <li><a href="#inicio" className="hover:text-blue-500 transition-all">Inicio</a></li>
                             <li><a href="#nosotros" className="hover:text-blue-500 transition-all">Nosotros</a></li>
                             <li><a href="#productos" className="hover:text-blue-500 transition-all">Productos</a></li>
                             <li><a href="#contacto" className="hover:text-blue-500 transition-all">Contacto</a></li>

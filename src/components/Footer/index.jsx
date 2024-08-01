@@ -19,28 +19,44 @@ export default function Footer() {
                             </ul>
                         </div>
                     </div>
-                    <ul className="flex space-x-4 lg:mb-4 mb-8 w-full md:w-1/3">
-                        <li>
-                            <a href="https://www.facebook.com/distrisuper" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600 transition-all hover:scale-110">
-                                <FontAwesomeIcon icon={faFacebookF} size="lg" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/distrisuperautopartes/" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600 transition-all hover:scale-110">
-                                <FontAwesomeIcon icon={faInstagram} size="lg" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mailto:info.distrisuper@gmail.com" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600 transition-all hover:scale-110">
-                                <FontAwesomeIcon icon={faEnvelope} size="lg" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://api.whatsapp.com/send/?phone=5492236208620&text&type=phone_number&app_absent=0" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600 transition-all hover:scale-110">
-                                <FontAwesomeIcon icon={faPhone} size="lg" />
-                            </a>
-                        </li>
-                    </ul>
+                    <div className="flex flex-col items-between gap-8 w-full md:w-1/3">
+                        <div className="flex flex-col w-full gap-4 p-4 lg:p-0 text-gray-700">
+                            <div className="flex flex-row items-center gap-4 mt-10 lg:mt-0">
+                                <div className="bg-secondary h-8 w-8 rounded-full flex justify-center items-center">
+                                    <FontAwesomeIcon icon={faEnvelope} color="white" />
+                                </div>
+                                <p className="text-gray-700 text-center">info.distrisuper@gmail.com</p>
+                            </div>
+                            <div className="flex flex-row items-center gap-4 mt-4 lg:mb-0 lg:mt-0">
+                                <div className="bg-secondary h-8 w-8 rounded-full flex justify-center items-center">
+                                    <FontAwesomeIcon icon={faPhone} color="white" />
+                                </div>
+                                <p className="text-gray-700 text-center">0810-666-4500</p>
+                            </div>
+                        </div>
+                        <ul className="flex space-x-4 lg:mb-4 mb-8 ">
+                            <li>
+                                <a href="https://www.facebook.com/distrisuper" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600 transition-all hover:scale-110">
+                                    <FontAwesomeIcon icon={faFacebookF} size="lg" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/distrisuperautopartes/" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600 transition-all hover:scale-110">
+                                    <FontAwesomeIcon icon={faInstagram} size="lg" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:info.distrisuper@gmail.com" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600 transition-all hover:scale-110">
+                                    <FontAwesomeIcon icon={faEnvelope} size="lg" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://api.whatsapp.com/send/?phone=5492236208620&text&type=phone_number&app_absent=0" className="text-blue-400 border border-blue-400 rounded-full p-3 h-12 w-12 flex items-center justify-center hover:text-blue-600 hover:border-blue-600 transition-all hover:scale-110">
+                                    <FontAwesomeIcon icon={faPhone} size="lg" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                     <div>
                         <img src={logo} width={300} className="mb-8 md:mb-0" />
                     </div>

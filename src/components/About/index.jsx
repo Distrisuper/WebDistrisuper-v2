@@ -2,7 +2,7 @@ import React from "react";
 import Timeline from "../Timeline";
 import vision from "/vision.png";
 import mision from "/mision.png";
-import fondo from "/fondos/fondo-about.svg"
+import fondo from "/fondos/fondo-about.webp"
 
 export default function About() {
     const data = [
@@ -41,13 +41,13 @@ export default function About() {
                 <div className="relative h-auto mb-16 w-full">
                     <Timeline data={data} />
                 </div>
-                <div style={{ backgroundImage: `url(${fondo})` }} className="flex flex-col gap-10 lg:flex-row lg:gap-20 px-6 py-24 bg-cover">
-                    <div className="max-w-sm mx-auto bg-white/80 border rounded-lg overflow-hidden border-b-4 border-b-secondary flex flex-col px-6 items-center py-10 gap-4">
+                <div style={{ backgroundImage: `url(${fondo})` }} className="flex flex-col gap-10 lg:flex-row lg:justify-center w-full lg:gap-24 px-6 py-24 bg-cover">
+                    <div className="max-w-sm bg-white/80 border rounded-lg overflow-hidden border-b-4 border-b-secondary flex flex-col px-6 items-center py-10 gap-4">
                         <div className="w-24 h-24 flex justify-center items-center">
                             <img src={vision} className="w-full h-auto object-cover" />
                         </div>
                         <div>
-                            <h2 className="text-gray-700 font-bold text-2xl mb-2 text-center">Nuestra visión</h2>
+                            <h2 className="text-gray-700 font-bold text-2xl mb-2 text-center">Nuestra Visión</h2>
                             <p className="text-gray-600 text-center">
                                 Ser la empresa autopartista y agroindustrial más reconocida del país por innovación y servicios.
                                 Ser los más elegidos por nuestros clientes, proveedores y colaboradores.
@@ -55,12 +55,12 @@ export default function About() {
                         </div>
 
                     </div>
-                    <div className="max-w-sm mx-auto bg-white/80 border rounded-lg overflow-hidden border-b-4 border-b-secondary flex flex-col px-6  items-center py-10 gap-4">
+                    <div className="max-w-sm  bg-white/80 border rounded-lg overflow-hidden border-b-4 border-b-secondary flex flex-col px-6 items-center py-10 gap-4">
                         <div className="w-24 h-24 flex justify-center items-center">
                             <img src={mision} className="w-full h-auto object-cover" />
                         </div>
                         <div>
-                            <h2 className="text-gray-700 font-bold text-2xl mb-2 text-center">Nuestra misión</h2>
+                            <h2 className="text-gray-700 font-bold text-2xl mb-2 text-center">Nuestra Misión</h2>
                             <p className="text-gray-600 text-center">
                                 Somos una distribuidora mayorista de auto-partes dedicada a satisfacer las necesidades de nuestros clientes basándonos fuertemente en el servicio, calidad y disponibilidad de nuestros productos y en la continua innovación.
                             </p>

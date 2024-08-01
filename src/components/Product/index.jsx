@@ -190,7 +190,7 @@ export default function Product() {
                             <div
                                 key={index}
                                 style={{ backgroundImage: expandedCard === index ? `url(${getCategoryDetails(category)?.fondo})` : '' }}
-                                className={`div${index + 1} cursor-pointer text-gray-700 ${expandedCard === index ? 'expanded shadow' : 'hover:bg-secondary hover:text-white transition-colors hover:drop-shadow duration-300'}`}
+                                className={`div${index + 1} cursor-pointer text-gray-700 ${expandedCard === index ? 'expanded shadow' : 'hover:bg-secondary hover:text-white transition-colors hover:drop-shadow duration-300'} ${expandedCard !== null && expandedCard !== index ? 'hidden' : ''}`}
                                 onClick={() => handleCardClick(index)}
                             >
                                 {expandedCard === index ?

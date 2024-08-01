@@ -22,15 +22,15 @@ export default function Contact() {
     return (
         <section id="contacto">
             <div className="bg-base flex flex-col items-center md:px-12 md:pt-16">
-                <div className="flex flex-col md:flex-row items-center">
+                <div className="flex flex-col md:flex-row items-start gap-8">
                     <div className="w-1/2 md:w-2/5 rounded-lg flex justify-center items-center md:items-start md:justify-start pt-10 md:pt-0">
-                        <img width="50%" height="auto" src="/rodamiento.png" />
+                        <img width="80%" height="auto" src="/rodamiento.png" />
                     </div>
-                    <div className="w-full md:w-3/5 flex flex-col gap-4">
-                        <h2 className="text-secondary text-center text-balance md:text-left text-5xl lg:text-7xl font-extrabold w-full leading-tight lg:leading-tight">
+                    <div className="w-full md:w-4/5 flex flex-col gap-4 relative">
+                        <h2 className="text-secondary text-center text-balance md:text-left text-5xl font-bold w-full leading-tight pt-3   ">
                             Comunicate con nosotros
                         </h2>
-                        <form className="w-full md:w-3/5 space-y-2 px-8 md:px-0">
+                        <form className="w-full md:w-4/5 space-y-2 px-8 md:px-0">
                             <FormInput type="text" placeholder="Nombre y Apellido" />
                             <FormInput type="email" placeholder="E-mail" />
                             <FormInput type="text" placeholder="Teléfono (opcional)" />
@@ -40,33 +40,16 @@ export default function Contact() {
                                     className="w-full p-2 border border-gray-300 rounded mt-1 outline-secondary"
                                 ></textarea>
                             </div>
-                            <div className="w-full md:w-1/2">
-                                <button className="bg-secondary hover:scale-105 transition-transform text-white p-2 px-16 font-bold shadow-md rounded active:bg-sky-500">Enviar <FontAwesomeIcon icon={faPaperPlane} /></button>
-                            </div>
                         </form>
-                    </div>
-                </div>
-
-
-
-                <div className="flex flex-row lg:justify-center gap-0 lg:gap-20 w-full flex-wrap p-4 lg:p-0 text-gray-700">
-                    <div className="flex flex-row items-center gap-4 mt-10 lg:mt-0">
-                        <div className="bg-secondary h-10 w-10 rounded-full flex justify-center items-center">
-                            <FontAwesomeIcon icon={faEnvelope} color="white" />
+                        <div className="w-auto absolute bottom-4 right-10">
+                            <button className="bg-secondary hover:scale-105 transition-transform text-white py-3 px-6 font-bold shadow-md rounded active:bg-sky-500"><FontAwesomeIcon icon={faPaperPlane} /></button>
                         </div>
-                        <p className="text-lg lg:text-xl font-semibold text-center lg:py-12">info.distrisuper@gmail.com</p>
-                    </div>
-                    <div className="flex flex-row items-center gap-4 mt-4 lg:mb-0 lg:mt-0">
-                        <div className="bg-secondary h-10 w-10 rounded-full flex justify-center items-center">
-                            <FontAwesomeIcon icon={faPhone} color="white" />
-                        </div>
-                        <p className="text-lg lg:text-xl font-semibold text-center lg:py-12">0810-666-4500</p>
                     </div>
                 </div>
-                <div className="w-full flex flex-col lg:flex-row lg:gap-36 gap-5 justify-center items-center p-8 lg:p-0">
 
 
-                </div>
+
+
                 <div className="flex flex-col items-center w-full">
                     <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-20 w-full mb-8 md:mt-24">
                         <h1 className="text-xl md:text-5xl font-bold text-gray-700">Encontranos en: </h1>
