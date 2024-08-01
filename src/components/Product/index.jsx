@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faCircle, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Tooltip } from 'react-tooltip';
@@ -133,6 +133,22 @@ export default function Product() {
     };
     const [expandedCard, setExpandedCard] = useState(null);
     const { ref, inView } = useInView({ triggerOnce: true });
+
+    useEffect(() => {
+        const imageUrls = [
+            ...Object.values(details).flatMap(detail => [
+                detail.fondo,
+                ...detail.marcas
+            ])
+        ];
+        imageUrls.forEach(url => {
+            const img = new Image();
+            img.src = url;
+            img.style.display = 'none';
+            document.body.appendChild(img);
+        });
+    }, [details]);
+
     const handleCardClick = (index) => {
         setExpandedCard(index);
     };
@@ -162,11 +178,10 @@ export default function Product() {
     };
 
 
-
     return (
         <>
-            <section ref={ref} id="productos" className={`bg-base h-auto flex flex-col gap-10 justify-center items-center w-full  ${inView ? 'fade-text' : ''}`}>
-                <h1 className={`2xl:text-6xl 2xl:leading-relaxed md:text-5xl text-3xl text-center leading-relaxed md:leading-relaxed mt-16   text-primary`}>
+            <section ref={ref} id="productos" className={`bg-base h-auto flex flex-col gap-10 justify-center items-center w-full ${inView ? 'fade-text' : ''}`}>
+                <h1 className={`2xl:text-6xl 2xl:leading-relaxed md:text-5xl text-3xl text-center leading-relaxed md:leading-relaxed mt-16 text-primary`}>
                     Nos especializamos en <strong>Tren Delantero</strong>
                 </h1>
                 <div className="w-11/12 h-[90vh] md:h-[75vh]">
@@ -181,7 +196,6 @@ export default function Product() {
                                 {expandedCard === index ?
                                     <>
                                         <div className="h-full w-full text-white flex flex-col 2xl:py-10 relative md:px-36 justify-center ">
-
                                             <button
                                                 onClick={handleCloseClick}
                                                 className="absolute top-4 right-4 border text-white/60 hover:text-white border-white/60 hover:bg-red-400 hover:border-red-400 transition-colors 2xl:h-10 2xl:w-10 h-8 w-8 flex justify-center items-center rounded-full"
@@ -192,7 +206,6 @@ export default function Product() {
                                             <Tooltip place="bottom" type="dark" effect="solid" id="tooltip-cerrar" />
                                             <Tooltip place="bottom" type="dark" effect="solid" id="tooltip-anterior" />
                                             <Tooltip place="bottom" type="dark" effect="solid" id="tooltip-siguiente" />
-
 
                                             <button
                                                 onClick={(e) => handleNavigationClick(e, -1)}
@@ -210,13 +223,13 @@ export default function Product() {
                                                 <FontAwesomeIcon icon={faChevronRight} size="lg" />
                                             </button>
 
-                                            <h3 className="mt-4 md:mt-8 text-3xl text-center lg:text-6xl 2xl:text-7xl font-extrabold md:self-start" dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '') }} />
+                                            <h3 className="mt-4 md:mt-8 text-3xl text-center lg:text-6xl 2xl:text-7xl font-extrabold" dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '') }} />
                                             {getCategoryDetails(category)?.productos.length > 0 ?
-                                                <div className="flex flex-col w-full mt-2 items-center md:items-start">
+                                                <div className="flex flex-col w-full mt-2 items-center">
                                                     <div className="grid grid-cols-1 sm:grid-cols-2 mt-4">
                                                         {
                                                             getCategoryDetails(category)?.productos?.map((producto, idx) => (
-                                                                <p key={idx} className="p-1 rounded-md text-left md:text-center flex items-center gap-5  md:text-lg 2xl:text-2xl">
+                                                                <p key={idx} className="p-1 rounded-md text-left md:text-center flex items-center gap-5 md:text-lg 2xl:text-2xl">
                                                                     <FontAwesomeIcon icon={faCircle} className="text-secondary" size="sm" /> {producto}
                                                                 </p>
                                                             ))
@@ -226,18 +239,18 @@ export default function Product() {
                                                     <div className="grid grid-cols-4 gap-x-6 gap-y-4 md:flex md:flex-row md:gap-10 md:mt-8 mt-16 md:items-center">
                                                         {getCategoryDetails(category).marcas?.map((img, idx) => (
                                                             <div className="w-14 h-14 2xl:w-20 2xl:h-20 flex justify-center items-center" key={idx}>
-                                                                <img src={img} alt={`Image ${idx + 1}`} className="w-auto h-auto object-cover" loading="lazy" />
+                                                                <img src={img} alt={`Image ${idx + 1}`} className="w-auto h-auto object-cover" />
                                                             </div>
                                                         ))}
                                                     </div>
                                                 </div>
                                                 :
-                                                <p className="text-center text-lg mt-8">Próximamente añadiremos productos</p>
+                                                <p className="absolute top-1/2 left-1/2 -translate-y-24 -translate-x-1/2 text-center text-6xl font-extrabold">Próximamente</p>
                                             }
                                         </div>
                                     </>
                                     :
-                                    <p className="text-lg lg:text-5xl font-extrabold text-center " dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '<wbr />').toUpperCase() }} />
+                                    <p className="text-lg lg:text-5xl font-extrabold text-center" dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '<wbr />').toUpperCase() }} />
                                 }
                             </div>
                         ))}
