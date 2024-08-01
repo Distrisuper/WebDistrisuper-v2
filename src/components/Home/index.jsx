@@ -14,13 +14,13 @@ export default function Home() {
                         Somos <strong>mayorista</strong> de <strong>autopartes</strong> orientados a <strong>casas de repuestos automotor, agro e industria</strong>
                     </h1>
                 </div>
-                <div className="w-full lg:mt-0 lg:w-1/2">
+                <div className="w-10/12 lg:mt-0 lg:w-1/2">
                     <Slider />
                 </div>
             </div>
             <div className="flex flex-col justify-center items-center p-6 lg:p-16">
                 <span className="w-full flex items-center justify-center my-3">
-                    <h2 className="text-primary text-xl lg:text-5xl leading-snug 2xl:leading-snug lg:leading-snug lg:text-center lg:px-16 text-balance">
+                    <h2 className="text-center text-primary text-xl lg:text-5xl leading-snug 2xl:leading-snug lg:leading-snug lg:px-16 text-balance">
                         Nos enfocamos fuertemente en el <strong>servicio</strong>, <strong>calidad</strong> y <strong>disponibilidad</strong> de nuestros productos y en la contínua <strong>innovación</strong>.
                     </h2>
                 </span>
@@ -28,7 +28,7 @@ export default function Home() {
                     <div className="flex flex-col items-center" ref={ref}>
                         {inView && (
                             <>
-                                <span className="text-3xl 2xl:text-8xl md:text-7xl font-extrabold text-white">
+                                <span className="text-5xl 2xl:text-8xl md:text-7xl font-extrabold text-white">
                                     <CountUp end={40} duration={3.5} prefix="+" />
                                 </span>
                                 <span className="text-white mt-2 text-lg lg:text-xl">Años de Experiencia</span>
@@ -38,7 +38,7 @@ export default function Home() {
                     <div className="flex flex-col items-center">
                         {inView && (
                             <>
-                                <span className="text-3xl 2xl:text-8xl md:text-7xl font-extrabold text-white">
+                                <span className="text-5xl 2xl:text-8xl md:text-7xl font-extrabold text-white">
                                     <CountUp end={400} duration={3.5} prefix="+" />
                                 </span>
                                 <span className="text-white mt-2 text-lg lg:text-xl text-center text-balance">Pedidos Entregados por día</span>
@@ -48,7 +48,7 @@ export default function Home() {
                     <div className="flex flex-col items-center">
                         {inView && (
                             <>
-                                <span className="text-3xl 2xl:text-8xl md:text-7xl font-extrabold text-white">
+                                <span className="text-5xl 2xl:text-8xl md:text-7xl font-extrabold text-white">
                                     <CountUp end={4000} duration={3.5} prefix="+" />
                                 </span>
                                 <span className="text-white mt-2 text-lg lg:text-xl">Localidades Alcanzadas</span>

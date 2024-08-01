@@ -20,6 +20,7 @@ export default function Product() {
 
     const details = {
         "SUSPENSIÓN": {
+            "columnas": "sm:grid-cols-4",
             "productos": [
                 "Amortiguadores",
                 "Resortes",
@@ -41,10 +42,10 @@ export default function Product() {
                 "/logosblancos/enerbat.png",
                 "/logosblancos/ag.png",
             ],
-
             "fondo": "/fondos/fondo-suspension.svg"
         },
         "LÍQUIDOS": {
+            "columnas": "sm:grid-cols-2",
             "productos": [
                 "Lubricantes",
                 "Refrigerantes y Anticongelantes",
@@ -60,6 +61,7 @@ export default function Product() {
             "fondo": "/fondos/fondo-liquidos.webp"
         },
         "DIRECCIÓN": {
+            "columnas": "sm:grid-cols-3",
             "productos": [
                 "Extremos",
                 "Salida de Cremalleras",
@@ -76,6 +78,7 @@ export default function Product() {
             "fondo": "/fondos/fondo-direccion.webp"
         },
         "FRENO": {
+            "columnas": "sm:grid-cols-3",
             "productos": [
                 "Pastillas",
                 "Discos",
@@ -90,6 +93,7 @@ export default function Product() {
             "fondo": "/fondos/fondo-freno.webp"
         },
         "TRANSMISIÓN": {
+            "columnas": "sm:grid-cols-4",
             "productos": [
                 "Embrague",
                 "Juntas Homocinéticas",
@@ -105,6 +109,7 @@ export default function Product() {
             "fondo": "/fondos/fondo-transmision.webp"
         },
         "ENCENDIDO": {
+            "columnas": "grid-cols-1",
             "productos": [
                 "Bujías"
             ],
@@ -113,6 +118,7 @@ export default function Product() {
             "fondo": "/fondos/fondo-encendido.webp"
         },
         "AGROINDUSTRIA": {
+            "columnas": "grid-cols-1",
             "productos": [
 
             ],
@@ -121,6 +127,7 @@ export default function Product() {
             "fondo": "/fondos/fondo-agroindustria.webp"
         },
         "COMPLEMENTARIOS": {
+            "columnas": "sm:grid-cols-3",
             "productos": [
                 "Contrapesos",
                 "Soportes",
@@ -226,10 +233,10 @@ export default function Product() {
                                             <h3 className="mt-4 md:mt-8 text-3xl text-center lg:text-6xl 2xl:text-7xl font-extrabold" dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '') }} />
                                             {getCategoryDetails(category)?.productos.length > 0 ?
                                                 <div className="flex flex-col w-full mt-2 items-center">
-                                                    <div className="grid grid-cols-1 sm:grid-cols-2 mt-4">
+                                                    <div className={`grid grid-cols-1 ${getCategoryDetails(category)?.columnas} mt-4 gap-4`}>
                                                         {
                                                             getCategoryDetails(category)?.productos?.map((producto, idx) => (
-                                                                <p key={idx} className="p-1 rounded-md text-left md:text-center flex items-center gap-5 md:text-lg 2xl:text-2xl">
+                                                                <p key={idx} className="p-1 rounded-md text-left flex items-center gap-5 md:text-lg 2xl:text-xl">
                                                                     <FontAwesomeIcon icon={faCircle} className="text-secondary" size="sm" /> {producto}
                                                                 </p>
                                                             ))

@@ -23,11 +23,11 @@ export default function Contact() {
         <section id="contacto">
             <div className="bg-base flex flex-col items-center md:px-12 md:pt-16">
                 <div className="flex flex-col md:flex-row items-start gap-8">
-                    <div className="w-1/2 md:w-2/5 rounded-lg flex justify-center items-center md:items-start md:justify-start pt-10 md:pt-0">
+                    <div className="hidden w-1/2 md:w-2/5 rounded-lg md:flex justify-center items-center md:items-start md:justify-start pt-10 md:pt-0">
                         <img width="80%" height="auto" src="/rodamiento.png" />
                     </div>
                     <div className="w-full md:w-4/5 flex flex-col gap-4 relative">
-                        <h2 className="text-secondary text-center text-balance md:text-left text-5xl font-bold w-full leading-tight pt-3   ">
+                        <h2 className="text-secondary text-center text-balance md:text-left text-5xl font-bold w-full leading-tight pt-10 md:pt-3">
                             Comunicate con nosotros
                         </h2>
                         <form className="w-full md:w-4/5 space-y-2 px-8 md:px-0">
@@ -51,7 +51,7 @@ export default function Contact() {
 
 
                 <div className="flex flex-col items-center w-full">
-                    <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-20 w-full mb-8 md:mt-24">
+                    <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-20 w-full mb-8 md:mt-24 mt-8">
                         <h1 className="text-xl md:text-5xl font-bold text-gray-700">Encontranos en: </h1>
                         <div className="relative inline-block">
                             <select

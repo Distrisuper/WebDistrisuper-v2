@@ -20,19 +20,20 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="flex flex-col items-between gap-8 w-full md:w-1/3">
-                        <div className="flex flex-col w-full gap-4 p-4 lg:p-0 text-gray-700">
-                            <div className="flex flex-row items-center gap-4 mt-10 lg:mt-0">
-                                <div className="bg-secondary h-8 w-8 rounded-full flex justify-center items-center">
-                                    <FontAwesomeIcon icon={faEnvelope} color="white" />
-                                </div>
-                                <p className="text-gray-700 text-center">info.distrisuper@gmail.com</p>
-                            </div>
-                            <div className="flex flex-row items-center gap-4 mt-4 lg:mb-0 lg:mt-0">
+                        <div className="flex flex-col w-full gap-2 md:gap-4 lg:p-0 text-gray-700 items-center md:items-start">
+                            <div className="flex flex-row items-center gap-4 ">
                                 <div className="bg-secondary h-8 w-8 rounded-full flex justify-center items-center">
                                     <FontAwesomeIcon icon={faPhone} color="white" />
                                 </div>
                                 <p className="text-gray-700 text-center">0810-666-4500</p>
                             </div>
+                            <div className="flex flex-row items-center gap-4 mt-4 lg:mb-0 lg:mt-0">
+                                <div className="bg-secondary h-8 w-8 rounded-full flex justify-center items-center">
+                                    <FontAwesomeIcon icon={faEnvelope} color="white" />
+                                </div>
+                                <p className="text-gray-700 text-center">info.distrisuper@gmail.com</p>
+                            </div>
+
                         </div>
                         <ul className="flex space-x-4 lg:mb-4 mb-8 ">
                             <li>
