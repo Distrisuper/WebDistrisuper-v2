@@ -81,9 +81,9 @@ export default function Product() {
             "columnas": "sm:grid-cols-3",
             "productos": [
                 "Pastillas",
-                "Discos",
-                "Campanas",
                 "Cilindros de Rueda",
+                "Campanas",
+                "Discos",
                 "Cilindros Maestros/Bombas",
                 "Flexibles",
                 "Depresores"
@@ -96,12 +96,12 @@ export default function Product() {
             "columnas": "sm:grid-cols-4",
             "productos": [
                 "Embrague",
-                "Juntas Homocinéticas",
-                "Semiejes",
-                "Crucetas y Tricetas",
                 "Columnas de Dirección",
+                "Juntas Homocinéticas",
                 "Manchones",
+                "Semiejes",
                 "Fuelles y Topes",
+                "Crucetas y Tricetas",
                 "Rodamientos"
             ],
             "marcas": ["/logosblancos/skf.png", "/logosblancos/spicer.png", "/logosblancos/nakata.png", "/logosblancos/under.png", "/logosblancos/garma.png", "/logosblancos/dauer.png", "/logosblancos/etma.png", "/logosblancos/vth.png", "/logosblancos/griffo.png", "/logosblancos/axios.png",],
@@ -130,8 +130,8 @@ export default function Product() {
             "columnas": "sm:grid-cols-3",
             "productos": [
                 "Contrapesos",
-                "Soportes",
-                "Resortes de Portón"
+                "Resortes de Portón",
+                "Soportes"
             ],
             "marcas": ["/logosblancos/solmmi.png", "/logosblancos/vth.png", "/logosblancos/axios.png", "/logosblancos/hiterub.png", "/logosblancos/gaspring.png",],
 
@@ -216,7 +216,7 @@ export default function Product() {
 
                                             <button
                                                 onClick={(e) => handleNavigationClick(e, -1)}
-                                                className="absolute top-1/2 -translate-y-1/2 left-2 md:left-4 border text-white/60 hover:text-white border-white/60 hover:border-white transition-colors 2xl:h-16 2xl:w-16 h-12 w-12 flex justify-center items-center rounded-full"
+                                                className="absolute bottom-10 md:top-1/2 md:-translate-y-1/2 left-2 md:left-4 border text-white/60 hover:text-white border-white/60 hover:border-white transition-colors 2xl:h-16 2xl:w-16 h-12 w-12 flex justify-center items-center rounded-full"
                                                 data-tooltip-id="tooltip-anterior" data-tooltip-content="Anterior"
                                             >
                                                 <FontAwesomeIcon icon={faChevronLeft} size="lg" />
@@ -224,26 +224,26 @@ export default function Product() {
 
                                             <button
                                                 onClick={(e) => handleNavigationClick(e, 1)}
-                                                className="absolute top-1/2 -translate-y-1/2 right-2 md:right-4 border text-white/60 hover:text-white border-white/60 hover:border-white transition-colors 2xl:h-16 2xl:w-16 h-12 w-12 flex justify-center items-center rounded-full"
+                                                className="absolute bottom-10 md:top-1/2 md:-translate-y-1/2  right-2 md:right-4 border text-white/60 hover:text-white border-white/60 hover:border-white transition-colors 2xl:h-16 2xl:w-16 h-12 w-12 flex justify-center items-center rounded-full"
                                                 data-tooltip-id="tooltip-siguiente" data-tooltip-content="Siguiente"
                                             >
                                                 <FontAwesomeIcon icon={faChevronRight} size="lg" />
                                             </button>
 
-                                            <h3 className="mt-4 md:mt-8 text-5xl text-center lg:text-6xl 2xl:text-7xl font-extrabold" dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '') }} />
+                                            <h3 className="mt-4 md:mt-8 text-3xl text-center lg:text-6xl 2xl:text-7xl font-extrabold" dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '') }} />
                                             {getCategoryDetails(category)?.productos.length > 0 ?
                                                 <div className="flex flex-col w-full mt-2 items-center">
-                                                    <div className={`grid grid-cols-1 ${getCategoryDetails(category)?.columnas} mt-4 gap-4`}>
+                                                    <div className={`grid grid-cols-2 ${getCategoryDetails(category)?.columnas} mt-4 md:gap-4`}>
                                                         {
                                                             getCategoryDetails(category)?.productos?.map((producto, idx) => (
-                                                                <p key={idx} className="p-1 rounded-md text-left flex items-center gap-5 md:text-lg 2xl:text-xl">
+                                                                <p key={idx} className="p-1 rounded-md text-left flex items-center gap-2 md:gap-5 text-sm md:text-lg 2xl:text-xl">
                                                                     <FontAwesomeIcon icon={faCircle} className="text-secondary" size="sm" /> {producto}
                                                                 </p>
                                                             ))
                                                         }
                                                     </div>
 
-                                                    <div className="grid grid-cols-4 gap-x-6 gap-y-4 md:flex md:flex-row md:gap-10 md:mt-8 mt-16 md:items-center">
+                                                    <div className="grid grid-cols-4 gap-x-6 gap-y-4 md:flex md:flex-row md:gap-10 md:mt-8 mt-12 md:items-center justify-center md:justify-normal">
                                                         {getCategoryDetails(category).marcas?.map((img, idx) => (
                                                             <div className="w-14 h-14 2xl:w-20 2xl:h-20 flex justify-center items-center" key={idx}>
                                                                 <img src={img} alt={`Image ${idx + 1}`} className="w-auto h-auto object-cover" />
@@ -252,7 +252,7 @@ export default function Product() {
                                                     </div>
                                                 </div>
                                                 :
-                                                <p className="absolute top-1/2 left-1/2 -translate-y-24 -translate-x-1/2 text-center text-6xl">Próximamente</p>
+                                                <p className="absolute top-1/2 left-1/2 -translate-y-14 md:-translate-y-24 -translate-x-1/2 text-center text-3xl md:text-6xl">Próximamente</p>
                                             }
                                         </div>
                                     </>
