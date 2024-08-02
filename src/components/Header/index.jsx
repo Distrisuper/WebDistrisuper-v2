@@ -61,7 +61,7 @@ export default function Header() {
                     <div className="flex justify-between items-center w-full p-4">
                         <a href="#"><img src={logo} className="w-40" alt="Logo" /></a>
                         <button onClick={() => setIsOpen(false)} className="focus:outline-none">
-                            <FontAwesomeIcon icon={faTimes} size="lg" />
+                            <FontAwesomeIcon icon={faTimes} size="lg" className='text-primary' />
                         </button>
                     </div>
                     <nav>
