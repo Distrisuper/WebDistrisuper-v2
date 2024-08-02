@@ -37,11 +37,11 @@ export default function About() {
         <section id="nosotros" >
 
             <div>
-                <h3 className="text-5xl font-semibold text-center md:pt-24 md:pb-16  pt-20 pb-10 text-gray-700">Nuestra historia</h3>
+                <h3 className="2xl:text-6xl md:text-5xl text-3xl font-bold text-center md:pt-24 md:pb-16 pt-20 pb-10 text-gray-700">Nuestra historia</h3>
                 <div className="relative h-auto mb-16 w-full">
                     <Timeline data={data} />
                 </div>
-                <div style={{ backgroundImage: `url(${fondo})` }} className="flex flex-col gap-10 lg:flex-row lg:justify-center w-full lg:gap-24 px-6 py-24 bg-cover">
+                <div style={{ backgroundImage: `url(${fondo})` }} className="flex flex-col gap-10 lg:flex-row lg:justify-center w-full lg:gap-24 px-6 py-24 mt-28 lg:mt-0 bg-cover">
                     <div className="max-w-sm bg-white/80 border rounded-lg overflow-hidden border-b-4 border-b-secondary flex flex-col px-6 items-center py-10 gap-4">
                         <div className="w-24 h-24 flex justify-center items-center">
                             <img src={vision} className="w-full h-auto object-cover" />

@@ -8,12 +8,12 @@ import "./styles.css";
 
 export default function Product() {
     const categories = [
-        "Suspensión",
+        "Sus-pen-sión",
         "Direc-ción",
         "Fre-no",
         "Lí-qui-dos",
         "Encen-dido",
-        "Transmisión",
+        "Trans-mi-sión",
         "Agroin-dustria",
         "Comple-menta-rios"
     ];
@@ -189,7 +189,7 @@ export default function Product() {
         <>
             <section ref={ref} id="productos" className={`bg-base h-auto flex flex-col gap-10 justify-center items-center w-full ${inView ? 'fade-text' : ''}`}>
                 <h1 className={`2xl:text-6xl 2xl:leading-relaxed md:text-5xl text-3xl text-center leading-relaxed md:leading-relaxed mt-16 text-primary`}>
-                    Nos especializamos en <strong>Tren Delantero</strong>
+                    Nos especializamos en <strong className="font-bold">Tren Delantero</strong>
                 </h1>
                 <div className="w-11/12 h-[90vh] md:h-[75vh]">
                     <div className={`parent h-full pb-16`}>
@@ -230,7 +230,7 @@ export default function Product() {
                                                 <FontAwesomeIcon icon={faChevronRight} size="lg" />
                                             </button>
 
-                                            <h3 className="mt-4 md:mt-8 text-3xl text-center lg:text-6xl 2xl:text-7xl font-extrabold" dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '') }} />
+                                            <h3 className="mt-4 md:mt-8 text-5xl text-center lg:text-6xl 2xl:text-7xl font-extrabold" dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '') }} />
                                             {getCategoryDetails(category)?.productos.length > 0 ?
                                                 <div className="flex flex-col w-full mt-2 items-center">
                                                     <div className={`grid grid-cols-1 ${getCategoryDetails(category)?.columnas} mt-4 gap-4`}>
@@ -252,12 +252,12 @@ export default function Product() {
                                                     </div>
                                                 </div>
                                                 :
-                                                <p className="absolute top-1/2 left-1/2 -translate-y-24 -translate-x-1/2 text-center text-6xl font-extrabold">Próximamente</p>
+                                                <p className="absolute top-1/2 left-1/2 -translate-y-24 -translate-x-1/2 text-center text-6xl">Próximamente</p>
                                             }
                                         </div>
                                     </>
                                     :
-                                    <p className="text-lg lg:text-5xl font-extrabold text-center" dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '<wbr />').toUpperCase() }} />
+                                    <p className="text-3xl lg:text-5xl font-extrabold text-center" dangerouslySetInnerHTML={{ __html: category.replace(/-/g, '<wbr />').toUpperCase() }} />
                                 }
                             </div>
                         ))}

@@ -8,13 +8,13 @@ export default function Home() {
     const [ref, inView] = useInView({ triggerOnce: true });
     return (
         <>
-            <div style={{ backgroundImage: `url(/fondos/fondo-home.webp)` }} className="h-screen flex flex-col lg:flex-row gap-10 lg:gap-0 items-center lg:justify-between px-8 lg:p-24 bg-cover" id="inicio">
-                <div className="w-full lg:w-1/2">
-                    <h1 className="text-white text-3xl lg:text-5xl leading-snug lg:leading-snug 2xl:leading-snug mt-24 lg:mt-0">
+            <div style={{ backgroundImage: `url(/fondos/fondo-home.webp)` }} className="h-screen flex flex-col lg:flex-row lg:gap-0 items-center gap-16 lg:justify-between px-8 lg:p-24 bg-cover" id="inicio">
+                <div className="w-full lg:w-1/2 pt-32 sm:pt-0">
+                    <h1 className="text-white text-3xl lg:text-5xl leading-snug lg:leading-snug 2xl:leading-snug lg:mt-0">
                         Somos <strong>mayorista</strong> de <strong>autopartes</strong> orientados a <strong>casas de repuestos automotor, agro e industria</strong>
                     </h1>
                 </div>
-                <div className="w-10/12 lg:mt-0 lg:w-1/2">
+                <div className="w-3/5 lg:mt-0 lg:w-1/2">
                     <Slider />
                 </div>
             </div>
