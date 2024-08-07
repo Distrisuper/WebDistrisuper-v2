@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone, faChevronDown, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import FormInput from "../Inputs/FormInput";
 
 const sucursales = [

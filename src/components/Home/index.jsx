@@ -1,7 +1,6 @@
 import React from "react";
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
-import Carousel from "../Carousel";
 import Slider from "../Slider";
 
 export default function Home() {
@@ -39,7 +38,7 @@ export default function Home() {
                         {inView && (
                             <>
                                 <span className="text-5xl 2xl:text-8xl md:text-7xl font-extrabold text-white">
-                                    <CountUp end={400} duration={3.5} prefix="+" />
+                                    <CountUp end={800} duration={3.5} prefix="+" />
                                 </span>
                                 <span className="text-white mt-2 text-lg lg:text-xl text-center text-balance">Pedidos Entregados por día</span>
                             </>
@@ -49,24 +48,14 @@ export default function Home() {
                         {inView && (
                             <>
                                 <span className="text-5xl 2xl:text-8xl md:text-7xl font-extrabold text-white">
-                                    <CountUp end={4000} duration={3.5} prefix="+" />
+                                    <CountUp end={4100} duration={3.5} prefix="+" />
                                 </span>
                                 <span className="text-white mt-2 text-lg lg:text-xl">Localidades Alcanzadas</span>
                             </>
                         )}
                     </div>
                 </div>
-                {/* <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 m-8 lg:m-24 items-center">
-                    <div>
-                        <img src={pico} />
-                    </div>
-                    <div>
-                        <img src={mdp} />
-                    </div>
-                </div> */}
-                {/*                 
-                <h3 className="text-center font-extrabold text-gray-300 text-3xl lg:text-5xl 2xl:text-6xl py-8">NUESTROS PRODUCTOS</h3>
-                <Carousel /> */}
+
             </div>
         </>
     );

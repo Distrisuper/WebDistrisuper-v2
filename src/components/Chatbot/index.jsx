@@ -1,6 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaperPlane, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import React from 'react';
 import './styles.css';
 
 const Chatbot = () => {
